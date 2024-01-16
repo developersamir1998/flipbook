@@ -1,0 +1,37 @@
+<!-- Import FormsModule in your module if not done already -->
+
+<div *ngIf="selectedFeedback">
+    <h3>Hi {{ selectedFeedback.client_name }}, Please give your valuable feedback!</h3>
+    <form (ngSubmit)="handleSubmit()">
+      <label>
+        Overall Rating:
+        <span *ngFor="let star of stars" (click)="setOverallRating(star)"
+              [style.color]="star <= overallRating ? 'gold' : 'gray'">★</span>
+      </label>
+  
+      <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index">
+        <label>
+          {{ demo.demo_name }}:
+          <span *ngFor="let star of stars" (click)="setDemoRating(demoIndex, demo.demo_name, star)"
+                [style.color]="star <= (demoFeedback[demoIndex]?.demo_rating || 0) ? 'gold' : 'gray'">★</span>
+        </label>
+      
+        <div *ngFor="let question of demo.demo_questions; let questionIndex = index">
+          <h4>{{ question.questionText }}</h4>
+          <label>
+            <span *ngFor="let star of stars" (click)="setQuestionRating(demoIndex, questionIndex, question.questionText, star)"
+                  [style.color]="star <= (getQuestionRating(demoIndex, questionIndex) || 0) ? 'gold' : 'gray'">★</span>
+          </label>
+        </div>
+      </div>
+      
+  
+      <label>
+        Visit Comment:
+        <input type="text" name="comment"  class="comment-box" [(ngModel)]="visitComment"/>
+      </label>
+  
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+  

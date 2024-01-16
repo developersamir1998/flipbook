@@ -1,0 +1,33 @@
+/* component-front-cover-page.component.css */
+
+.feedback-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  
+.custom-button {
+  margin: 5px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.custom-button.selected {
+  background-color: #e4f70f; /* Change the background color for selected button */
+}
+
+.custom-button:hover {
+  background-color: #e4f70f;
+}
+
+  

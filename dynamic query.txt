@@ -1,0 +1,9 @@
+1.Every time new image should be available on webpage.
+2.All image should be present in a folder.
+3.Image should be update in folder(when ?,from where ?)
+
+4.Based on req 3->
+when=check everytime in the images folder that how many files are availble and if less than a number then we will call api and download image.
+
+
+From Where=call api and download image in that folder, after download images name should renamed.

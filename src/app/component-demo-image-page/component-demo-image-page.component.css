@@ -1,0 +1,15 @@
+/* component-demo-image-page.component.css */
+.image-container {
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Adjust the height as needed */
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.5s ease-in-out; /* Optional: Add a fade effect between images */
+  }
+  

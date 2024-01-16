@@ -1,0 +1,21 @@
+<!-- component-front-cover-page.component.html -->
+<div class="feedback-container">
+  <h2>Feedback Page</h2>
+
+  <div class="button-container">
+    <ng-container *ngIf="filteredData.length === 0; else feedbackList">
+      <p>{{ currentVisitStatus }}</p>
+    </ng-container>
+
+    <ng-template #feedbackList>
+      <button
+        *ngFor="let item of filteredData"
+        class="custom-button"
+        [class.selected]="isButtonSelected(item.client_name)"
+        (click)="handleButtonClick(item.client_name)"
+      >
+        {{ item.client_name }} - {{ item.visit_date | date: 'mediumTime' }}
+      </button>
+    </ng-template>
+  </div>
+</div>

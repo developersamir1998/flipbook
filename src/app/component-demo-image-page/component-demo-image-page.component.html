@@ -1,0 +1,8 @@
+<!-- component-demo-image-page.component.html -->
+
+<div class="image-container">
+  
+  
+  <img *ngFor="let imageUrl of imageUrls; let i = index" [src]="imageUrl" [hidden]="i !== currentImageIndex">
+</div>
+  

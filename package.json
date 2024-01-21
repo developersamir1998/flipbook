@@ -2,7 +2,7 @@
   "name": "flipbook-s",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "npm ci",
+    
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

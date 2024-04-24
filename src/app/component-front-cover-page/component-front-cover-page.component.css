@@ -1,9 +1,9 @@
-/* component-front-cover-page.component.css */
+.temp{
+  height: 100%;
+  width: 100%
+}
 
-.feedback-container {
-    text-align: center;
-    margin-top: 20px;
-  }
+
   
   .button-container {
     display: flex;
@@ -11,9 +11,24 @@
     justify-content: center;
   }
   
+  .feedback-container{
+    
+    display:flex;
+    height:850px;
+    width:650px;
+    background-color: black;
+
+  }
+  .img-container{
+    background-image: url("../../assets/images/Group 18997.png");
+    background-size: cover;
+    height: 104%;
+    width: 100%;
+
+  }
   
 .custom-button {
-  margin: 5px;
+  
   padding: 10px;
   background-color: #3498db;
   color: #fff;

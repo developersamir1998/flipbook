@@ -24,6 +24,7 @@ import { ComponentFrontCoverPageComponent } from './component-front-cover-page/c
 import { ComponentFeedbackPageComponent } from './component-feedback-page/component-feedback-page.component';
 import { ComponentDemoImagePageComponent } from './component-demo-image-page/component-demo-image-page.component';
 import { ComponentFeedbackFormPageComponent } from './component-feedback-form-page/component-feedback-form-page.component';
+import { ComponentPageFourComponent } from './component-page-four/component-page-four.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ComponentFeedbackFormPageComponent } from './component-feedback-form-pa
     ComponentFrontCoverPageComponent,
     ComponentFeedbackPageComponent,
     ComponentDemoImagePageComponent,
-    ComponentFeedbackFormPageComponent
+    ComponentFeedbackFormPageComponent,
+    ComponentPageFourComponent
   
     
   ],

@@ -2,31 +2,56 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FeedbackDataService } from '../services/feedback-data.service';
+import { ActivatedRoute } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+
 
 @Component({
   selector: 'app-component-front-cover-page',
   templateUrl: './component-front-cover-page.component.html',
-  styleUrls: ['./component-front-cover-page.component.css']
+  styleUrls: ['./component-front-cover-page.component.css'],
+  
 })
 export class ComponentFrontCoverPageComponent implements OnInit {
   feedbackData: any[] = [];
   currentVisitStatus: string = 'We are checking today visits.';
   filteredData: any[] = [];
   selectedClientName: string | null = null;
+  recievedClientName!: string | null | '';
+  visitParams: any[]= [];
 
-  constructor(private router: Router, private feedbackDataService: FeedbackDataService) {}
+  constructor(
+    private router: Router, 
+    private feedbackDataService: FeedbackDataService, 
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.fetchData();
+
+    this.route.queryParams.subscribe(params=>{
+      const clientName=params['clientName'];
+      const visitDate=params['visitDate'];
+      console.log('Recieved client name:',clientName);
+      console.log('Recieved visit date:',visitDate);
+
+      if(clientName!=undefined)
+        {
+          this.fetchData(clientName);
+          this.isButtonSelected(clientName);
+          this.handleButtonClick(clientName);
+        }
+
+    });
+
   }
 
   // Fetch data from the API
-  fetchData(): void {
+  fetchData(clientName: string): void {
     fetch('https://feedback-app-v1-0.onrender.com/api/visit/visitList')
       .then(response => response.json())
       .then(data => {
         this.feedbackData = data;
         this.filterData();
+        this.handleButtonClick(clientName);
       })
       .catch(error => {
         console.error('Error Fetching Data:', error);
@@ -54,7 +79,7 @@ export class ComponentFrontCoverPageComponent implements OnInit {
 
   handleButtonClick(clientName: string): void {
     const selectedFeedback = this.filteredData.find(item => item.client_name === clientName);
-  
+    console.log("selected Feedback=",selectedFeedback);
     if (selectedFeedback) {
       this.selectedClientName = clientName;
       this.feedbackDataService.setSelectedFeedback(selectedFeedback);

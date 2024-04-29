@@ -45,4 +45,20 @@
   background-color: #e4f70f;
 }
 
-  
+.clientCard {
+  position: relative;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 40%;
+  height: 15%;
+  border-radius: 7%;
+  background-color: white;
+}
+
+.clientCardDate{
+    background-color: black;
+    height: 80px;
+    margin-top: 86.5px;
+    border-radius: 10px;
+}
+

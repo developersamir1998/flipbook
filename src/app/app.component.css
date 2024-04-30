@@ -1,7 +1,8 @@
 body {
-  background-color: #c9c5ef;
+  /* background-color: #c9c5ef; */
   height: 100%;
   margin: 0;
+  background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
   overflow: hidden;
 }
 
@@ -25,11 +26,21 @@ body {
   width: 100vw; /* Change to viewport width */
   height: 100vh; /* Change to viewport height */
   /* UI Properties */
-  background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
-  border-radius: 16px;
-  opacity: 0.81;
-  backdrop-filter: blur(43px);
-  -webkit-backdrop-filter: blur(43px);
+  /* background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
+  border-radius: 16px; 
+  /* opacity: 0.81; */
+  /* backdrop-filter: blur(43px); */
+  /* -webkit-backdrop-filter: blur(43px); */
+}
+.logo{
+  margin-top: 105px;
+  margin-left: 465px;
+}
+
+.logo img
+{
+  width: 450px;
+  height: 80px;
 }
 
 
@@ -44,7 +55,7 @@ body {
   left: 0;
   position: absolute;
   right: 0;
-  top: 0;
+  top: -100px;
 }
 
 .flipbook {
@@ -75,19 +86,13 @@ body {
   border-radius: 1px 1px 1px 1px;
 }
 
-.flipbook .cover-front {
-  
- 
-  
-}
-
 .flipbook .cover-back {
   background: #2c92e6;
   box-shadow: inset -15px 0px 10px -4px rgb(0,0,0,0.7);
 }
 
 .flipbook h2 {
-  font-size: 50px;
+  font-size: 50px; 
   color: #781378;
   position: relative;
   top: 8%;

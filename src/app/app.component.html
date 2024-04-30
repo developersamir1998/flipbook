@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <!-- Include Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -8,56 +9,68 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
   <!-- Add your Angular dependencies here -->
+
 
   <style>
     /* Add any custom styles here */
   </style>
 </head>
 
+
 <body>
   <div class="wrapper">
     <div class="logo">
       <img src="./../assets/images/LivingLab_Logo.png" alt="">
     </div>
+
+
     <div class="aspect">
       <div class="aspect-inner">
         <div class="flipbook" id="flipbook">
 
+
           <!-- Page 1 - Cover Front -->
           <div class="page cover-front">
-            
+           
             <app-component-front-cover-page></app-component-front-cover-page>
           </div>
           <!-- Page 2 - Display text -->
           <div class="page mid-left-page">
-            <div class="container">
-              
+            <!-- <div class="container">
+             
              <app-component-demo-image-page></app-component-demo-image-page>
-            </div>
+            </div> -->
+            <app-component-page-second></app-component-page-second>
           </div>
+
 
           <!-- Page 3 - Angular conditionally displays an image or video -->
           <div class="page mid-right-page">
-            <div class="container">
-              <!-- Add your Angular component or content here -->
+            <!-- <div class="container">
+             
               <app-component-feedback-page></app-component-feedback-page>
-            </div>
+            </div> -->
+            <app-component-page-third></app-component-page-third>
           </div>
+
 
           <!-- Page 4 - Show image -->
           <div class="page mid-left-page">
-            
+           
              <app-component-page-four></app-component-page-four>
-            
+           
           </div>
+
 
           <!-- Page 5 - Show Form -->
           <div class="page mid-right-page">
             <div class="container">
-              
+             
             </div>
           </div>
+
 
           <!-- Page 6 - Show Angular component (Work in Progress) -->
           <div class="page mid-left-page">
@@ -66,6 +79,7 @@
             </div>
           </div>
 
+
           <!-- Page 7 - Show Angular component (Work in Progress) -->
           <div class="page mid-right-page">
             <div class="container">
@@ -73,17 +87,20 @@
             </div>
           </div>
 
+
           <!-- Page 8 - Show Picture -->
           <div class="page mid-left-page">
             <div class="container">
-              
+             
             </div>
           </div>
+
 
           <!-- Page 9 - Blank page -->
           <div class="page mid-right-page">
             <div class="container"></div>
           </div>
+
 
           <!-- Page 10 - Show content text and add content text (Work in Progress) -->
           <div class="page mid-left-page">
@@ -92,12 +109,14 @@
             </div>
           </div>
 
+
           <!-- Page 11 - Show picture -->
           <div class="page mid-right-page">
             <div class="container">
              
             </div>
           </div>
+
 
           <!-- Page 12 - Show Angular component (Work in Progress) -->
           <div class="page mid-left-page">
@@ -106,10 +125,12 @@
             </div>
           </div>
 
+
           <!-- Page 13 - Blank page -->
           <div class="page mid-right-page">
             <div class="container"></div>
           </div>
+
 
           <!-- Page 14 - Cover back page -->
           <div class="page cover-back mid-left-page"></div>
@@ -118,5 +139,6 @@
     </div>
   </div>
 </body>
+
 
 </html>

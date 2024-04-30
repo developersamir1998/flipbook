@@ -25,6 +25,9 @@ import { ComponentFeedbackPageComponent } from './component-feedback-page/compon
 import { ComponentDemoImagePageComponent } from './component-demo-image-page/component-demo-image-page.component';
 import { ComponentFeedbackFormPageComponent } from './component-feedback-form-page/component-feedback-form-page.component';
 import { ComponentPageFourComponent } from './component-page-four/component-page-four.component';
+import { ComponentPageFirstComponent } from './component-page-first/component-page-first.component';
+import { ComponentPageSecondComponent } from './component-page-second/component-page-second.component';
+import { ComponentPageThirdComponent } from './component-page-third/component-page-third.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { ComponentPageFourComponent } from './component-page-four/component-page
     ComponentFeedbackPageComponent,
     ComponentDemoImagePageComponent,
     ComponentFeedbackFormPageComponent,
-    ComponentPageFourComponent
+    ComponentPageFourComponent,
+    ComponentPageFirstComponent,
+    ComponentPageSecondComponent,
+    ComponentPageThirdComponent
   
     
   ],

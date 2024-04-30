@@ -8,7 +8,9 @@ import * as $ from 'jquery'; // Import the jQuery library
 import 'src/assets/turn.js'; // Import a custom JavaScript library (turn.js)
 import 'src/assets/turn.min.js'; // Import a minified version of the custom JavaScript library
 import 'turn.js'; // Import another JavaScript library (turn.js)
-
+import { Router } from '@angular/router';
+import { FeedbackDataService } from './services/feedback-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +24,15 @@ export class AppComponent implements OnInit {
   private audio_flip: HTMLAudioElement; // Define an HTML audio element for flip sounds
   private audio_close: HTMLAudioElement; // Define an HTML audio element for book closing sounds
   isVideoOpen = false; // Initialize a flag for video open state
+  
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor(
+    private renderer: Renderer2, 
+    private el: ElementRef,
+    private router: Router, 
+    private feedbackDataService: FeedbackDataService, 
+    private route: ActivatedRoute
+  ) {
     // Constructor function to initialize the component
     this.audio_flip = new Audio('assets/audio/flip_book_page.mp3'); // Initialize flip sound audio
     // this.audio_flip.load();
@@ -41,12 +50,48 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //accept params and fetched visit data
+    this.route.queryParams.subscribe(params => {
+      const clientName = params['clientName'];
+      const visitDate = params['visitDate'];
+      if (clientName && visitDate) {
+        this.fetchVisitData(clientName, visitDate);
+      }
+    });
+
     this.flipbookEL = this.el.nativeElement.querySelector('#flipbook'); // Get the flipbook element
     this.setupFlipbook(); // Call a function to set up the flipbook
     this.imageUrl = localStorage.getItem('imageData'); // Get image URL from local/static storage
     this.textContent = localStorage.getItem('textConte​nt'); // Get text content from local/static storage
 
    
+  }
+
+  // Utility function to format date as DD-MM-YYYY
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+  }
+
+  // Get current date in DD-MM-YYYY format
+  currentDate: string = this.formatDate(new Date().toISOString().split('T')[0]);
+  
+  fetchVisitData(clientName: string, visitDate: string): void {
+    fetch('https://feedback-app-v1-0.onrender.com/api/visit/visitList')
+      .then(response => response.json())
+      .then(data => {
+
+        console.log("fetched data through api  in App.ts=",data);
+
+        const filteredVisitByDate = data.filter((item: { visit_date: string; }) => this.formatDate(item.visit_date) === this.currentDate);
+        const filteredData = filteredVisitByDate.find((item: { client_name: string; }) => item.client_name === clientName);
+        console.log("filtered data in App.ts=",filteredData);
+        this.feedbackDataService.setFilteredData(filteredData);
+        
+      })
+      .catch(error => {
+        console.error('Error Fetching Data:', error);
+      });
   }
 
   private setupFlipbook(): void {

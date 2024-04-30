@@ -76,7 +76,7 @@ export class ComponentFrontCoverPageComponent implements OnInit {
       this.currentVisitStatus = 'No Visit Today.';
     }
   }
-
+  
   handleButtonClick(clientName: string): void {
     const selectedFeedback = this.filteredData.find(item => item.client_name === clientName);
     console.log("selected Feedback=",selectedFeedback);

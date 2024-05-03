@@ -28,6 +28,7 @@ import { ComponentPageFourComponent } from './component-page-four/component-page
 import { ComponentPageFirstComponent } from './component-page-first/component-page-first.component';
 import { ComponentPageSecondComponent } from './component-page-second/component-page-second.component';
 import { ComponentPageThirdComponent } from './component-page-third/component-page-third.component';
+import { ComponentPageLastComponent } from './component-page-last/component-page-last.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ComponentPageThirdComponent } from './component-page-third/component-pa
     ComponentPageFourComponent,
     ComponentPageFirstComponent,
     ComponentPageSecondComponent,
-    ComponentPageThirdComponent
+    ComponentPageThirdComponent,
+    ComponentPageLastComponent
   
     
   ],

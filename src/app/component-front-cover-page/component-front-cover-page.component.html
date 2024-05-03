@@ -9,7 +9,7 @@
   <div class="clientCard">
     <!-- <div class="clientCardName"><h1>{{recievedClientName}}</h1></div> -->
     <div *ngIf="recievedClientName" class="clientCardName">
-      <p>{{ recievedClientName }}</p>
+      <p><b>{{ recievedClientName }}</b></p>
     </div>
     <br/>
     <div class="clientCardDate" >
@@ -26,25 +26,13 @@
 
 
   <div class="button-container">
-    <!-- <ng-container *ngIf="filteredData.length === 0; else feedbackList">
-      <p>{{ currentVisitStatus }}</p>
-    </ng-container> -->
-
-    <!-- <ng-template #feedbackList>
-      <button
-        *ngFor="let item of filteredData"
-        class="custom-button"
-        [class.selected]="isButtonSelected(item.client_name)"
-        (click)="handleButtonClick(item.client_name)"
-      >
-        {{ item.client_name }} - {{ item.visit_date | date: 'mediumTime' }}
-      </button>
-    </ng-template> -->
+    
     <div *ngIf="recievedClientName">
       
       <div *ngFor="let visitor of visitorDetails">
-        <button>{{ visitor.visitor_name }}</button>
+        <button class="visitorButton">{{ visitor.visitor_name }}</button>
       </div>
+      
     </div>
   </div>
 </div>

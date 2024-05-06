@@ -29,6 +29,7 @@ import { ComponentPageFirstComponent } from './component-page-first/component-pa
 import { ComponentPageSecondComponent } from './component-page-second/component-page-second.component';
 import { ComponentPageThirdComponent } from './component-page-third/component-page-third.component';
 import { ComponentPageLastComponent } from './component-page-last/component-page-last.component';
+import { ComponentPageFiveComponent } from './component-page-five/component-page-five.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ComponentPageLastComponent } from './component-page-last/component-page
     ComponentPageFirstComponent,
     ComponentPageSecondComponent,
     ComponentPageThirdComponent,
-    ComponentPageLastComponent
+    ComponentPageLastComponent,
+    ComponentPageFiveComponent
   
     
   ],

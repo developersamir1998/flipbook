@@ -21,12 +21,17 @@ export class ComponentFrontCoverPageComponent implements OnInit {
   
   visitorDetails: any[] = [];
 
+  currentDate: string | undefined;
+
   constructor(
     private router: Router, 
     private feedbackDataService: FeedbackDataService, 
     private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    // Call function to get current date in desired format
+    this.currentDate = this.getCurrentDate();
+
     this.feedbackDataService.getFilteredData().subscribe(data => {
       console.log("getfilteredData() method called=",data);
       
@@ -45,6 +50,14 @@ export class ComponentFrontCoverPageComponent implements OnInit {
 
   }
 
+  getCurrentDate(): string {
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const today = new Date();
+    const day = today.getDate();
+    const month = months[today.getMonth()];
+    const year = today.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
   
 
   

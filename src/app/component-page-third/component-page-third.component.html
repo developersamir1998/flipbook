@@ -1,12 +1,19 @@
 <div class="thirdmain">
 
-    <div class="block1">
-
+    <div *ngIf="selectedFeedback">
+        <div class="somespace">
+         
+        </div>
+        <form>
+            <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
+                <div class="demo-box">
+                    <img src="../../assets/images/image1.jpg">
+                </div>
+            </div>
+        </form>
+         <!-- <div class="demo-image">
+          <img src="/flipbook/src/assets/images/image1.jpg">
+         </div> -->
     </div>
-    <!-- <div class="block1">
-
-    </div>
-    <div class="block1">
-
-    </div> -->
+    
 </div>

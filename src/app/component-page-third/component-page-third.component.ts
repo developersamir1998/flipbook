@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FeedbackDataService } from '../services/feedback-data.service';
 import { Subscription } from 'rxjs';
+import { FeedbackDataService } from '../services/feedback-data.service';
 
 @Component({
   selector: 'app-component-page-third',
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./component-page-third.component.css']
 })
 export class ComponentPageThirdComponent implements OnInit,OnDestroy{
-    
+
   selectedFeedback:any;
   private subscription!: Subscription;
   constructor(
@@ -29,5 +29,5 @@ export class ComponentPageThirdComponent implements OnInit,OnDestroy{
    // throw new Error('Method not implemented.');
   };
 
-  
+
 }

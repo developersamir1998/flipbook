@@ -14,7 +14,7 @@ export class FeedbackDataService {
 
   setSelectedVisitor(visitorName: string): void {
     this.selectedVisitorName = visitorName;
-    console.log("this is from service name"+this.selectedVisitorName);
+    console.log("this is from service name="+this.selectedVisitorName);
   } 
 
   private selectedFeedbackSource = new BehaviorSubject<any>(null);

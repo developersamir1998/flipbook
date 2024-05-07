@@ -23,6 +23,8 @@ export class ComponentFrontCoverPageComponent implements OnInit {
 
   currentDate: string | undefined;
 
+  selectedVisitor: string = ''; // To store the selected visitor name
+
   constructor(
     private feedbackdataservice:FeedbackDataService,
     private router: Router, 
@@ -51,10 +53,7 @@ export class ComponentFrontCoverPageComponent implements OnInit {
 
   }
 
-  handleVisitorSelection(visitorName: string): void {
-    this.feedbackdataservice.setSelectedVisitor(visitorName);
-    console.log("going to service");
-  }
+ 
   getCurrentDate(): string {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const today = new Date();
@@ -65,23 +64,24 @@ export class ComponentFrontCoverPageComponent implements OnInit {
   }
   
 
-  
+  handleVisitorSelection(visitorName: string): void {
+    if (this.selectedVisitor === visitorName) {
+      // Deselect visitor if already selected
+      this.selectedVisitor = '';
+    } else {
+      // Select visitor
+      this.selectedVisitor = visitorName;
+    }
+    // Pass the selected visitor name to the service
+    this.feedbackDataService.setSelectedVisitor(this.selectedVisitor);
+  }
+
+  isVisitorSelected(visitorName: string): boolean {
+    // Check if the visitor is currently selected
+    return this.selectedVisitor === visitorName;
+  }
 
   
   
-  // handleButtonClick(clientName: string): void {
-  //   const selectedFeedback = this.filteredData.find(item => item.client_name === clientName);
-  //   console.log("selected Feedback=",selectedFeedback);
-  //   if (selectedFeedback) {
-  //     this.selectedClientName = clientName;
-  //     this.feedbackDataService.setSelectedFeedback(selectedFeedback);
-  //   }
-  // }
-
-  // Check if a button is selected
-  // isButtonSelected(clientName: string): boolean {
-  //   return this.selectedClientName === clientName;
-  // }
-
   
 }

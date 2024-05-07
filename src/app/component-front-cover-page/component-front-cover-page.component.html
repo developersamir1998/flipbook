@@ -30,7 +30,11 @@
     <div *ngIf="recievedClientName">
       
       <div *ngFor="let visitor of visitorDetails">
-        <button class="visitorButton"  (click)="handleVisitorSelection(visitor.visitor_name)">{{ visitor.visitor_name }}</button>
+        <button class="visitorButton"  
+        [class.selected]="isVisitorSelected(visitor.visitor_name)"
+        (click)="handleVisitorSelection(visitor.visitor_name)">
+        {{ visitor.visitor_name }}
+        </button>
       </div>
       
     </div>

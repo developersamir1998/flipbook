@@ -8,7 +8,14 @@ import { BehaviorSubject, Observable  } from 'rxjs';
 })
 export class FeedbackDataService {
   
+  selectedVisitorName: string | undefined;
+
   constructor(private http: HttpClient) {}
+
+  setSelectedVisitor(visitorName: string): void {
+    this.selectedVisitorName = visitorName;
+    console.log("this is from service name"+this.selectedVisitorName);
+  } 
 
   private selectedFeedbackSource = new BehaviorSubject<any>(null);
   selectedFeedback$ = this.selectedFeedbackSource.asObservable();

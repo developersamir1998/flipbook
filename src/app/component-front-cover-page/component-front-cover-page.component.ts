@@ -24,6 +24,7 @@ export class ComponentFrontCoverPageComponent implements OnInit {
   currentDate: string | undefined;
 
   constructor(
+    private feedbackdataservice:FeedbackDataService,
     private router: Router, 
     private feedbackDataService: FeedbackDataService, 
     private route: ActivatedRoute) {}
@@ -50,6 +51,10 @@ export class ComponentFrontCoverPageComponent implements OnInit {
 
   }
 
+  handleVisitorSelection(visitorName: string): void {
+    this.feedbackdataservice.setSelectedVisitor(visitorName);
+    console.log("going to service");
+  }
   getCurrentDate(): string {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const today = new Date();

@@ -63,8 +63,14 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   // }
   setDemoRating(rating: number, demoIndex: number): void {
     const demoName = this.selectedFeedback?.demo_details[demoIndex]?.demo_name;
-    this.demoFeedback[demoIndex] = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
-  
+    //this.demoFeedback[demoIndex] = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
+    const updatedDemoFeedback = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
+    
+    // Update demo feedback at specified index
+    this.demoFeedback[demoIndex] = updatedDemoFeedback;
+
+    // Add the updated demo feedback to the service
+    this.feedbackDataService.addDemoFeedback(updatedDemoFeedback);
     // Calculate overall rating based on demo ratings
     let totalRating = 0;
     let numDemos = 0;
@@ -79,6 +85,8 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
     // Update overallRating as the average of demo ratings
     if (numDemos > 0) {
       this.overallRating = totalRating / numDemos;
+      this.feedbackDataService.setOverallRating(this.overallRating);
+      
     } else {
       this.overallRating = 0; // Reset if no demos are rated
     }
@@ -166,6 +174,8 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
     // Check if all demo ratings are provided
     return this.demoFeedback.every(demo => demo?.demo_rating !== undefined);
   }
+
+  
     
   }
      

@@ -39,7 +39,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.icons {
+/* .icons {
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
@@ -51,17 +51,18 @@ h1 {
     height: 40px;
     border-radius: 50%;
     background-color: #555;
-    /* Add your icon styles */
-}
+   
+} */
 
 textarea {
+    
     width: 100%;
     height: 150px;
     resize: none;
     border: 1px dotted #777;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background-color: transparent;
     color: white;
 }
@@ -78,3 +79,16 @@ button {
     width: 150px;
     height: 50px;
 }
+
+
+.icons span {
+    font-size: 50px; /* Adjust the size of emojis */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-right: 40px;
+  
+  }
+  
+  /* Example: Change color on hover */
+  .icons span:hover {
+    color: rgb(98, 182, 215);
+  }

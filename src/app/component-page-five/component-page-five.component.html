@@ -2,16 +2,15 @@
     <div class="container">
         <h1>Would you like to rate your overall experience?</h1>
         <div class="icons">
-            <img src="../../assets/images/smile1.png" alt="Icon 1">
-            <img src="../../assets/images/smile2.png" alt="Icon 2">
-            <img src="../../assets/images/smile3.png" alt="Icon 3">
-            <img src="../../assets/images/smile4.png" alt="Icon 4">
-            <img src="../../assets/images/smile5.png" alt="Icon 5">
-            
-            <!-- Add your circular icons here -->
+            <span (click)="setOverallRating(5)">😊</span>
+            <span (click)="setOverallRating(4)">😄</span>
+            <span (click)="setOverallRating(3)">😐</span>
+            <span (click)="setOverallRating(2)">😕</span>
+            <span (click)="setOverallRating(1)">😞</span>
+          
         </div>
-        <textarea placeholder="Write additional comments here..."></textarea>
-        <button>Submit</button>
+        <textarea placeholder="Write additional comments here..." [(ngModel)]="comment" (input)="handleCommentInput($event)"></textarea>
+        <button (click)="feedbacksubmit()">Submit</button>
     </div>
 </div>
 

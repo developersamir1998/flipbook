@@ -1,7 +1,7 @@
 <div class="secondmain">
     <div *ngIf="selectedFeedback">
       <h3>Hi {{ selectedFeedback.client_name }}, give us your valuable feedback!</h3>
-      <form #feedbackForm="ngForm" (ngSubmit)="submitFeedbackForm()">
+      <form #feedbackForm="ngForm">
         <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
           <div class="demo-box">
             <label>{{ demo.demo_name }}</label>
@@ -16,7 +16,7 @@
             <!-- <h2>How do you rate this showcase?</h2> -->
             <div class="rating-stars">
               <span *ngFor="let star of stars" 
-                (click)="setDemoRating(star, demoIndex); autoSubmitForm()"
+                (click)="setDemoRating(star, demoIndex)"
                     [style.color]="star <= (demoFeedback[demoIndex]?.demo_rating || 0) ? 'gold' : 'gray'"
                    >★</span>
 

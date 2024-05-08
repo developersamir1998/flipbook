@@ -85,7 +85,7 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
     // Update overallRating as the average of demo ratings
     if (numDemos > 0) {
       this.overallRating = totalRating / numDemos;
-      this.feedbackDataService.setOverallRating(this.overallRating);
+      // this.feedbackDataService.setOverallRating(this.overallRating);
       
     } else {
       this.overallRating = 0; // Reset if no demos are rated
@@ -142,33 +142,33 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   //   }
   // }
      
-  submitFeedbackForm(): void {
-    console.log("entering the storefeedback:")
-    // Build feedback data based on current state
-    const feedbackData = {
-      visit_date: this.selectedFeedback?.visit_date,
-      client_name: this.selectedFeedback?.client_name,
-      overall_rating: this.overallRating,
-      demo_feedback: this.demoFeedback,
-      visit_comment: "good",
-    };
+  // submitFeedbackForm(): void {
+  //   console.log("entering the storefeedback:")
+  //   // Build feedback data based on current state
+  //   const feedbackData = {
+  //     visit_date: this.selectedFeedback?.visit_date,
+  //     client_name: this.selectedFeedback?.client_name,
+  //     overall_rating: this.overallRating,
+  //     demo_feedback: this.demoFeedback,
+  //     visit_comment: "good",
+  //   };
 
-    // Call your feedback service to store the data
-    this.feedbackDataService.storeFeedback(feedbackData).subscribe(
-      response => {
-        console.log('Feedback stored successfully:', response);
-      },
-      error => {
-        console.error('Error storing feedback:', error);
-      }
-    );
+  //   // Call your feedback service to store the data
+  //   this.feedbackDataService.storeFeedback(feedbackData).subscribe(
+  //     response => {
+  //       console.log('Feedback stored successfully:', response);
+  //     },
+  //     error => {
+  //       console.error('Error storing feedback:', error);
+  //     }
+  //   );
     
-  }
-  autoSubmitForm(): void{
-    if(this.allDemosRated()){
-      this.submitFeedbackForm();
-    }
-  }
+  // }
+  // autoSubmitForm(): void{
+  //   if(this.allDemosRated()){
+  //     this.submitFeedbackForm();
+  //   }
+  // }
   
   allDemosRated(): boolean {
     // Check if all demo ratings are provided

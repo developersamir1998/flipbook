@@ -25,7 +25,7 @@ export class FeedbackDataService {
 
   setOverallRating(rating: number): void {
     this.overallRating = rating;
-    console.log("this is from service over all rating "+this.overallRating)
+    console.log("this is from service over all rating is from fiveth component"+this.overallRating)
   }
 
   setVisitComment(comment: string): void {
@@ -42,7 +42,26 @@ export class FeedbackDataService {
       console.log("this is from service"+`Demo Name: ${feedback.demo_name}, Rating: ${feedback.demo_rating}`);
     }
   }
+  getSelectedVisitorName(): string {
+    return this.selectedVisitorName ||' ';
+  }
 
+  getOverallRating(): number {
+    return this.overallRating;
+  }
+
+  getVisitComment(): string {
+    return this.visitComment;
+  }
+
+  getDemoFeedback(): Array<{
+    demo_name: string;
+    demo_rating: number;
+    question_feedback?: Array<{ question: string; question_rating: number }>;
+  }> {
+    return this.demoFeedback;
+  }
+  
 
   private selectedFeedbackSource = new BehaviorSubject<any>(null);
   selectedFeedback$ = this.selectedFeedbackSource.asObservable();

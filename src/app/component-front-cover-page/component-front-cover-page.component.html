@@ -27,7 +27,7 @@
 
   <div class="button-container">
     
-    <div *ngIf="recievedClientName">
+    <!-- <div *ngIf="recievedClientName">
       
       <div *ngFor="let visitor of visitorDetails">
         <button class="visitorButton"  
@@ -37,7 +37,22 @@
         </button>
       </div>
       
-    </div>
+    </div> -->
+    <div *ngIf="recievedClientName">
+      <div class="name-section">
+          <ng-container *ngFor="let visitor of visitorDetails; let i = index">
+              <div class="name-card" [ngClass]="{'single-client': visitorDetails.length <= 3 && i === visitorDetails.length - 1}">
+                  <button class="visitorButton"  
+                      [class.selected]="isVisitorSelected(visitor.visitor_name)"
+                      (click)="handleVisitorSelection(visitor.visitor_name)">
+                      <span class="visitorName">{{ visitor.visitor_name }}</span>
+                  </button>
+              </div>
+          </ng-container>
+      </div>
+  </div>
+  
+  
   </div>
 </div>
 </div>

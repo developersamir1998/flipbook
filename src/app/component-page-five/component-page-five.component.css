@@ -85,6 +85,8 @@ button {
     font-size: 50px; /* Adjust the size of emojis */
     cursor: pointer; /* Show pointer cursor on hover */
     margin-right: 40px;
+    display: inline-block; 
+    
   
   }
   
@@ -92,3 +94,12 @@ button {
   .icons span:hover {
     color: rgb(98, 182, 215);
   }
+
+  .selected {
+    display: inline-block;
+    border: 2px solid white; /* Border color for selected emoji */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Padding around the emoji */
+    margin-right: 10px; /* Margin between emoji containers */
+  }
+ 

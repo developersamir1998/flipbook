@@ -40,7 +40,7 @@ export class ComponentFrontCoverPageComponent implements OnInit {
       
       if (data ) {
         // Assuming client_name is a property in the data
-        this.recievedClientName = data.client_name;
+        this.recievedClientName = data.client_name.toUpperCase();
         this.visitorDetails=data.visitors_details;
 
       } else {

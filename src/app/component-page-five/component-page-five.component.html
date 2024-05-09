@@ -4,7 +4,7 @@
         <h1>Would you like to rate your overall experience?</h1>
         <div class="icons">
             <span (click)="setOverallRating(5)" [ngClass]="{'selected': overallRating === 5}">😊</span>
-          
+            <!-- <span (click)="setOverallRating(5)" [ngClass]="{'selected': overallRating === 5}" class="emoji">&#x1F60A;</span> -->
             <span (click)="setOverallRating(4)" [ngClass]="{'selected': overallRating === 4}">😄</span>
             <span (click)="setOverallRating(3)" [ngClass]="{'selected': overallRating === 3}">😐</span>
             <span (click)="setOverallRating(2)" [ngClass]="{'selected': overallRating === 2}">😕</span>

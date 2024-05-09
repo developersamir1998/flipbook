@@ -81,26 +81,44 @@ button {
 }
 
 
+.icons {
+    font-size: 50px; /* Adjust font size as needed */
+}
+
 .icons span {
-    font-size: 50px; /* Adjust the size of emojis */
-    cursor: pointer; /* Show pointer cursor on hover */
+    font-size: 50px;
+    cursor: pointer;
+    color: #ccc; /* Default grey color */
+    display: inline-block;
     margin-right: 40px;
-    display: inline-block; 
-    
-  
-  }
+    transition: color 0.2s; /* Smooth transition effect */
+}
+
+.icons span.selected {
+    color: #ffc107; /* Colorful when selected */
+    display: inline-block;
+    border: 2px solid white; 
+}
+
+/* .icons span { */
+    /* font-size: 50px;  */
+    /* Adjust the size of emojis */
+    /* cursor: pointer;  */
+    /* Show pointer cursor on hover */
+    /* margin-right: 40px;
+    display: inline-block;
+  } */
   
   /* Example: Change color on hover */
   .icons span:hover {
-    color: rgb(98, 182, 215);
+    color: #ffc107;
   }
 
-  .selected {
+  /* .selected {
     display: inline-block;
-    border: 2px solid white; /* Border color for selected emoji */
-    border-radius: 10px; /* Rounded corners */
-    padding: 5px; /* Padding around the emoji */
-    margin-right: 10px; /* Margin between emoji containers */
+    border: 2px solid white; 
+    border-radius: 10px; 
+    padding: 5px; 
+    margin-right: 10px; 
   }
- 
-  
+  */

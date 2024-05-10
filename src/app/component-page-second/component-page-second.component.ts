@@ -17,7 +17,7 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   
   overallRating: number = 0; // Initialize as needed
   visitComment: string = ''; // Initialize as needed
-  demoFeedback: Array<{ demo_name: string, demo_rating: number, question_feedback?: Array<{ question: string, question_rating: number }> }> = [];
+  demoFeedback: Array<{ demo_name: string, demo_rating: number,demo_url:string, question_feedback?: Array<{ question: string, question_rating: number }> }> = [];
 
   constructor(
     private feedbackDataService: FeedbackDataService,
@@ -63,8 +63,10 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   // }
   setDemoRating(rating: number, demoIndex: number): void {
     const demoName = this.selectedFeedback?.demo_details[demoIndex]?.demo_name;
-    //this.demoFeedback[demoIndex] = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
-    const updatedDemoFeedback = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
+   // const demoUrl = this.selectedFeedback?.demo_details[demoIndex]?.demo_url;
+   // this.demoFeedback[demoIndex] = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
+    const demoUrl="coming soon !!! ";
+    const updatedDemoFeedback = { demo_name: demoName, demo_rating: rating,demo_url: demoUrl, question_feedback: [] };
     
     // Update demo feedback at specified index
     this.demoFeedback[demoIndex] = updatedDemoFeedback;

@@ -11,6 +11,7 @@ export class ComponentPageFiveComponent implements OnInit {
   selectedFeedback: any;
   overallRating: number = 0;
   comment: string = '';
+  visitorDetails: any[] = [];
 
 
   constructor(private feedbackDataService: FeedbackDataService) { }
@@ -19,7 +20,8 @@ export class ComponentPageFiveComponent implements OnInit {
     this.feedbackDataService.getFilteredData().subscribe(feedback => {
       this.selectedFeedback = feedback;
       console.log("getfilteredData() method called in second page=",feedback);
-
+      this.visitorDetails=feedback.visitors_details;
+      console.log("from five vistor data :" +this.visitorDetails[0].visitor_name+this.visitorDetails[0].visitor_designation)
       // Clear the form when a new feedback is selected
       //this.resetForm();
     });
@@ -38,18 +40,33 @@ export class ComponentPageFiveComponent implements OnInit {
   this.feedbackDataService.setVisitComment(this.comment);
 }
 
+// 
 submitFeedbackForm(): void {
   console.log("entering the storefeedback:")
-  // Build feedback data based on current state
   const feedbackData = {
     visit_date: this.selectedFeedback?.visit_date,
-    client_name: this.feedbackDataService.getSelectedVisitorName(),
+    client_name: this.feedbackDataService.getclientName(),
     overall_rating: this.feedbackDataService.getOverallRating(),
-    demo_feedback: this.feedbackDataService.getDemoFeedback(),
-    visit_comment: this.feedbackDataService.getVisitComment()
+    demo_feedback: this.feedbackDataService.getDemoFeedback().map((demo: any) => ({
+      demo_name: demo.demo_name,
+      demo_rating: demo.demo_rating,
+      demoUrl: demo.demo_url, // Ensure that demoUrl is correctly populated
+      question_feedback: demo.question_feedback,
+     
+    })),
+    visit_comment: this.feedbackDataService.getVisitComment(),
+    visitors_details:this.visitorDetails.map((data: any) => (
+      {
+        
+        visitor_name: data.visitor_name,
+	      visitor_designation: data.visitor_designation,
+        
+      })),
+    submittedBy: this.feedbackDataService.getSelectedVisitorName()
   };
 
-  // Call your feedback service to store the data
+  console.log("Feedback Data:", feedbackData); // Log feedback data to verify demoUrl field
+
   this.feedbackDataService.storeFeedback(feedbackData).subscribe(
     response => {
       console.log('Feedback stored successfully:', response);
@@ -58,8 +75,8 @@ submitFeedbackForm(): void {
       console.error('Error storing feedback:', error);
     }
   );
-  
 }
+
 feedbacksubmit(){
   this.submitFeedbackForm();
 } 

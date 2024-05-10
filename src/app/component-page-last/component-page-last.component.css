@@ -22,18 +22,19 @@
   }
   .thumbsupimg
   {
-    
-    width: 200px;
-    height: 200px;
+    background-image: url("../../assets/images/Group_18889.png");
+    width: 150px;
+    height: 160px;
     /* margin-left: 202px;
     margin-top: 180.4px; */
   }
   .amazing
   {
+    background-image: url("../../assets/images/Group18890.png");
     margin-left: 8px;
     margin-top: 8px;
-    width: 200px;
-    height: 60px;
+    width: 125px;
+    height: 30px;
   }
   .remark
   {

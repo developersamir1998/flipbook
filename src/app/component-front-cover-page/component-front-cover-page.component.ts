@@ -17,8 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class ComponentFrontCoverPageComponent implements OnInit {
   
+  recievedClient!: string | null | '';
   recievedClientName!: string | null | '';
-  
   visitorDetails: any[] = [];
 
   currentDate: string | undefined;
@@ -38,11 +38,11 @@ export class ComponentFrontCoverPageComponent implements OnInit {
     this.feedbackDataService.getFilteredData().subscribe(data => {
       console.log("getfilteredData() method called=",data);
       
-      if (data ) {
+      if (data) {
         // Assuming client_name is a property in the data
         this.recievedClientName = data.client_name.toUpperCase();
         this.visitorDetails=data.visitors_details;
-
+        this.feedbackDataService.setClientName(data.client_name);
       } else {
         // Handle the case where filtered data is empty or undefined
         this.recievedClientName = "Loading Client Details..";

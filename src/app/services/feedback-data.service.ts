@@ -7,20 +7,30 @@ import { BehaviorSubject, Observable  } from 'rxjs';
   providedIn: 'root'
 })
 export class FeedbackDataService {
+
   
   selectedVisitorName: string | undefined;
-
+  selectedclientName:string | undefined;
+  // submittedBy:string | undefined;
   overallRating: number = 0;
   visitComment: string = '';
-  demoFeedback: Array<{ demo_name: string, demo_rating: number, question_feedback?: Array<{ question: string, question_rating: number }> }> = [];
-
+  demoFeedback: Array<{ demo_name: string, demo_rating: number, question_feedback?: Array<{ question: string, question_rating: number }>,demo_url:string }> = [];
+  
 
 
   constructor(private http: HttpClient) {}
 
+  // setSubmittedBy(submittedBy:string):void{
+  //   this.submittedBy=submittedBy;
+  //   console.log("this is from service name="+this.submittedBy);
+  // }
   setSelectedVisitor(visitorName: string): void {
     this.selectedVisitorName = visitorName;
     console.log("this is from service name="+this.selectedVisitorName);
+  } 
+  setClientName(clientName: string): void {
+    this.selectedclientName = clientName;
+    console.log("this is from service name="+this.selectedclientName);
   } 
 
   setOverallRating(rating: number): void {
@@ -33,7 +43,12 @@ export class FeedbackDataService {
     console.log("this is from service comment "+this.visitComment);
   }
 
-  addDemoFeedback(demoData: { demo_name: string, demo_rating: number, question_feedback?: { question: string, question_rating: number }[] }): void {
+  addDemoFeedback(demoData: {
+    demo_name: string,
+    demo_rating: number,
+    question_feedback?: Array<{ question: string, question_rating: number }>,
+    demo_url: string // Include demo_url parameter
+  }): void {
     this.demoFeedback.push(demoData);
     
     // Print all demo ratings to the console
@@ -53,11 +68,15 @@ export class FeedbackDataService {
   getVisitComment(): string {
     return this.visitComment;
   }
-
+  getclientName(): string {
+    return this.selectedclientName || '';
+  }
+  
   getDemoFeedback(): Array<{
     demo_name: string;
     demo_rating: number;
     question_feedback?: Array<{ question: string; question_rating: number }>;
+    demo_url:string;
   }> {
     return this.demoFeedback;
   }
@@ -86,7 +105,7 @@ export class FeedbackDataService {
    //store feedback data from second page 
    storeFeedback(feedbackData: any): Observable<any> {
     console.log("in service stored "+feedbackData);
-    const url = 'https://feedback-app-v1-0.onrender.com/api/feedback/createFeedback';
+    const url = 'https://backend-new-cshx.onrender.com/api/feedback/createFeedback';
     return this.http.post<any>(url, feedbackData);
   }
 

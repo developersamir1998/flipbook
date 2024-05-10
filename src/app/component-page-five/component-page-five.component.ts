@@ -8,13 +8,15 @@ import { FeedbackDataService } from '../services/feedback-data.service';
 })
 export class ComponentPageFiveComponent implements OnInit {
 
+  feedbackSubmitted: boolean = false;
+
   selectedFeedback: any;
   overallRating: number = 0;
   comment: string = '';
   visitorDetails: any[] = [];
 
 
-  constructor(private feedbackDataService: FeedbackDataService) { }
+  constructor(private feedbackDataService: FeedbackDataService, ) { }
 
   ngOnInit(): void {
     this.feedbackDataService.getFilteredData().subscribe(feedback => {
@@ -70,12 +72,21 @@ submitFeedbackForm(): void {
   this.feedbackDataService.storeFeedback(feedbackData).subscribe(
     response => {
       console.log('Feedback stored successfully:', response);
+      this.feedbackSubmitted = true;  
     },
     error => {
       console.error('Error storing feedback:', error);
     }
   );
 }
+
+onPopupOkClicked(): void {
+  // Redirect to YouTube or any other logic you want to perform after the user clicks "OK"
+  window.location.href = 'https://homepageslidder.onrender.com/';
+}
+
+
+
 
 feedbacksubmit(){
   this.submitFeedbackForm();

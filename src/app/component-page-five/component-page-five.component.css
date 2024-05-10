@@ -122,3 +122,42 @@ button {
     margin-right: 10px; 
   }
   */
+
+
+  /* Modal Container */
+.modal {
+    position: fixed;
+    margin-left: 800px;
+    margin-top: 500px;
+    /* top: 0;
+    left: 0; */
+    width: 900px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    align-items: center;
+    background-color: white;
+    padding: 280px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* shadow effect */
+    /* font-size: 100px; */
+  }
+  
+  .modal-content button {
+    width: 300px;
+    margin-left: 70px;
+  }
+
+  h2{
+    font-size: 30px;
+    white-space: nowrap; /* Ensure text appears in a single line */
+  overflow: hidden; /* Hide any overflow text */
+  text-overflow: ellipsis; 
+  }
+ 

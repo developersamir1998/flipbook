@@ -80,11 +80,17 @@ submitFeedbackForm(): void {
   );
 }
 
-onPopupOkClicked(): void {
+onPopuphomeClicked(): void {
   // Redirect to YouTube or any other logic you want to perform after the user clicks "OK"
   window.location.href = 'https://homepageslidder.onrender.com/';
 }
-
+onPopupfirstClicked():void{
+  var urlParams = new URLSearchParams(window.location.search);
+    var clientName = urlParams.get('clientName') ?? '';
+    var visitDate = urlParams.get('visitDate') ?? '';
+  var redirectURL = "https://developersamir1998.github.io/flipbook?clientName=" + encodeURIComponent(clientName) + "&visitDate=" + encodeURIComponent(visitDate);
+  window.location.href = redirectURL;
+}
 
 
 

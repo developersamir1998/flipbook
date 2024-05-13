@@ -25,7 +25,7 @@ h3 {
 }
 
 .demo-box {
-  display: flex;
+  /* display: flex; */
   flex-direction: column; /* Stack elements vertically */
   align-items: center;
   padding: 40px;
@@ -41,32 +41,30 @@ h3 {
 }
 
 label {
-  font-size: 24px;
+  font-size: 60px;
   color: black;
-  margin-bottom: 20px; /* Adjust margin bottom for spacing */
-  margin-right: 450px;
+  margin-bottom: 25px; /* Adjust margin bottom for spacing */
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 40px;
   color: black;
   margin-bottom: 20px; /* Adjust margin bottom for spacing */
-  margin-right: 370px;
+  
 }
 
 .rating-stars {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-right: 350px;
 }
 
 .rating-stars span {
-  font-size: 46px;
+  font-size: 60px;
   cursor: pointer;
   border-color: black;
   color: white; /* Default star color */
-  margin-right: 30px; /* Add right margin to create space between stars */
+  margin-right: 30px; 
+  /* Add right margin to create space between stars */
 }
 
 .rating-stars span.gold {

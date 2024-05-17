@@ -100,6 +100,7 @@ export class AppComponent implements OnInit {
         autoCenter: true,
         when: {
           turning: (event: any, page: number, view: any) => {
+            console.log("corner clicked!=",page);
             if (page >= 3 && page <= 12) {
               this.playAudio_flip(); // Play flip sound when turning pages 3 to 12 
               //the sound of turning the pages, inside the book

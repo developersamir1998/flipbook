@@ -7,6 +7,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import * as $ from 'jquery'; // Import the jQuery library
+//libraries for turning the page effect
+import 'src/assets/turn.js'; // Import a custom JavaScript library (turn.js)
+import 'src/assets/turn.min.js'; // Import a minified version of the custom JavaScript library
+import 'turn.js'; // Import another JavaScript library (turn.js)
 
 
 @Component({
@@ -69,9 +74,16 @@ export class ComponentFrontCoverPageComponent implements OnInit {
     } else {
       // Select visitor
       this.selectedVisitor = visitorName;
+      this.openSecondPage(); // Call function to open the second page
     }
     // Pass the selected visitor name to the service
     this.feedbackDataService.setSelectedVisitor(this.selectedVisitor);
+  }
+
+  openSecondPage(): void {
+    // Assuming you have a function to navigate to the last page in your flipbook library
+    // Replace this with the appropriate function call from your flipbook library
+    ($("#flipbook") as any).turn("page", 2);
   }
 
   isVisitorSelected(visitorName: string): boolean {

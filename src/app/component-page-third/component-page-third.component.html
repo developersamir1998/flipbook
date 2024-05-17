@@ -1,9 +1,9 @@
 <div class="thirdmain">
 
-    <div *ngIf="selectedFeedback">
-        <div class="somespace">
-         
+    <div class="heading">
         </div>
+    <div *ngIf="selectedFeedback" class="mainbody">
+        
         <form>
             <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
                 <div class="demo-box">

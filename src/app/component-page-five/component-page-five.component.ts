@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FeedbackDataService } from '../services/feedback-data.service';
 
 @Component({
@@ -8,16 +8,28 @@ import { FeedbackDataService } from '../services/feedback-data.service';
 })
 export class ComponentPageFiveComponent implements OnInit {
 
+  
+
+
   feedbackSubmitted: boolean = false;
 
   selectedFeedback: any;
   overallRating: number = 0;
   comment: string = '';
   visitorDetails: any[] = [];
+  
 
 
-  constructor(private feedbackDataService: FeedbackDataService, ) { }
+  constructor(private feedbackDataService: FeedbackDataService) { }
 
+  resetForm2():void{
+    this.overallRating = 0;
+    this.comment = '';
+    this.visitorDetails = [];
+    
+   
+
+  }
   ngOnInit(): void {
     this.feedbackDataService.getFilteredData().subscribe(feedback => {
       this.selectedFeedback = feedback;
@@ -26,6 +38,7 @@ export class ComponentPageFiveComponent implements OnInit {
       console.log("from five vistor data :" +this.visitorDetails[0].visitor_name+this.visitorDetails[0].visitor_designation)
       // Clear the form when a new feedback is selected
       //this.resetForm();
+      
     });
   }
 
@@ -72,7 +85,12 @@ submitFeedbackForm(): void {
   this.feedbackDataService.storeFeedback(feedbackData).subscribe(
     response => {
       console.log('Feedback stored successfully:', response);
-      this.feedbackSubmitted = true;  
+      this.feedbackSubmitted = true; 
+     
+     this.feedbackDataService.sendClickEvent(this.resetForm2());
+      //this.resetForm2();
+      // console.log(this.second?.demoFeedback.values);
+
     },
     error => {
       console.error('Error storing feedback:', error);
@@ -96,5 +114,6 @@ onPopupfirstClicked():void{
 
 feedbacksubmit(){
   this.submitFeedbackForm();
+ 
 } 
 }

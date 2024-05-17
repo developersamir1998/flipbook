@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { FeedbackDataService } from '../services/feedback-data.service';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./component-page-second.component.css']
 })
 export class ComponentPageSecondComponent implements OnInit,OnDestroy {
-    @ViewChild('feedbackForm') feedbackForm!: NgForm;
+   // @ViewChild('feedbackForm') feedbackForm!: NgForm;
 
 
   selectedFeedback: any;
@@ -22,7 +22,13 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   constructor(
     private feedbackDataService: FeedbackDataService,
     private http: HttpClient  // Inject the HttpClient module
-  ) {}
+  ) {
+
+    this.feedbackDataService.getClickEvent().subscribe(() => {
+      //this.demoFeedback=[];
+      this.resetForm();
+    });
+  }
 
   stars = Array.from({ length: 5 }, (_, index) => index + 1);
 
@@ -31,6 +37,7 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
     this.visitComment = '';
     this.demoFeedback = []; // Reset demo feedback array
     // Add any other properties you want to reset
+    //this.feedbackForm.resetForm();
   }
 
   ngOnInit(): void {
@@ -50,6 +57,9 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   // }
 
   ngOnDestroy(): void {
+    //this.resetForm();
+   // this.someFunction();
+      
     this.subscription.unsubscribe();
   }
 
@@ -73,6 +83,8 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
 
     // Add the updated demo feedback to the service
     this.feedbackDataService.addDemoFeedback(updatedDemoFeedback);
+    
+    
     // Calculate overall rating based on demo ratings
     let totalRating = 0;
     let numDemos = 0;
@@ -176,8 +188,6 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
     // Check if all demo ratings are provided
     return this.demoFeedback.every(demo => demo?.demo_rating !== undefined);
   }
-
-  
     
   }
      

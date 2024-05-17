@@ -1,18 +1,27 @@
 <div class="secondmain">
-    <div *ngIf="selectedFeedback">
-      <h3><strong style="color: yellow;"> Hi {{ selectedFeedback.client_name }}</strong>, give us your valuable feedback!</h3>
+    <div class="heading" *ngIf="selectedFeedback">
+     <div class="subhead1">
+      <h3><strong> Hi {{ selectedFeedback.client_name }}</strong> ,</h3>
+     </div>
+     <div class="subhead2">
+      <p> give us your valuable feedback!</p>
+     </div>
+    </div>
+
+    <div *ngIf="selectedFeedback" class="mainbody">
+     
       <form #feedbackForm="ngForm">
         <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
           <div class="demo-box">
             <label>{{ demo.demo_name }}</label>
             
-            <div *ngFor="let question of demo.demo_questions; let questionIndex = index">
-              <h4>{{ question.questionText }}</h4>
+            <!-- <div *ngFor="let question of demo.demo_questions; let questionIndex = index">
+              <h4>{{ question.questionText }}</h4> -->
               <!-- <label>
                 <span *ngFor="let star of stars" (click)="setQuestionRating(demoIndex, questionIndex, question.questionText, star)"
                       [style.color]="star <= (getQuestionRating(demoIndex, questionIndex) || 0) ? 'gold' : 'gray'">★</span>
               </label> -->
-            </div>
+            <!-- </div> -->
             <!-- <h2>How do you rate this showcase?</h2> -->
             <div class="rating-stars">
               <span *ngFor="let star of stars" 

@@ -1,13 +1,22 @@
 // feedback-data.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable  } from 'rxjs';
+import { BehaviorSubject, Observable, Subject  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedbackDataService {
 
+  private subject = new Subject<any>();
+
+  sendClickEvent(data:any):void {
+    this.subject.next(data);
+  }
+
+  getClickEvent(): Subject<any> {
+    return this.subject;
+  }
   
   selectedVisitorName: string | undefined;
   selectedclientName:string | undefined;
@@ -105,7 +114,7 @@ export class FeedbackDataService {
    //store feedback data from second page 
    storeFeedback(feedbackData: any): Observable<any> {
     console.log("in service stored "+feedbackData);
-    const url = 'https://backend-new-cshx.onrender.com/api/feedback/createFeedback';
+    const url = 'http://localhost:5000/api/feedback/createFeedback';
     return this.http.post<any>(url, feedbackData);
   }
 

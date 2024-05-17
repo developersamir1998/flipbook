@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
   currentDate: string = this.formatDate(new Date().toISOString().split('T')[0]);
   
   fetchVisitData(clientName: string, visitDate: string): void {
-    fetch('https://backend-new-cshx.onrender.com/api/visit/visitList')
+    fetch('http://localhost:5000/api/visit/visitList')
       .then(response => response.json())
       .then(data => {
 
@@ -152,4 +152,6 @@ export class AppComponent implements OnInit {
       }
     }
   }
+
+ 
 }

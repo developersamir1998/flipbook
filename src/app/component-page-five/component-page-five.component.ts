@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedbackDataService } from '../services/feedback-data.service';
+import * as $ from 'jquery'; // Import the jQuery library
+//libraries for turning the page effect
+import 'src/assets/turn.js'; // Import a custom JavaScript library (turn.js)
+import 'src/assets/turn.min.js'; // Import a minified version of the custom JavaScript library
+import 'turn.js'; // Import another JavaScript library (turn.js)
 
 @Component({
   selector: 'app-component-page-five',
@@ -73,11 +78,25 @@ submitFeedbackForm(): void {
     response => {
       console.log('Feedback stored successfully:', response);
       this.feedbackSubmitted = true;  
+      this.openLastPage(); // Call function to open the last page
     },
     error => {
       console.error('Error storing feedback:', error);
     }
   );
+}
+
+openLastPage(): void {
+  // Assuming you have a function to navigate to the last page in your flipbook library
+  // Replace this with the appropriate function call from your flipbook library
+  ($("#flipbook") as any).turn("page", 6);
+  setTimeout(() => {
+    console.log("After 5 second page 1 will me open.");
+    ($("#flipbook") as any).turn("page", 1);
+  }, 5000);
+
+  
+  
 }
 
 onPopuphomeClicked(): void {

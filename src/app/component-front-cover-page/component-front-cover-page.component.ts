@@ -36,8 +36,6 @@ export class ComponentFrontCoverPageComponent implements OnInit {
     this.currentDate = this.getCurrentDate();
 
     this.feedbackDataService.getFilteredData().subscribe(data => {
-      console.log("getfilteredData()   method called=",data);
-      
       if (data) {
         // Assuming client_name is a property in the data
         this.recievedClientName = data.client_name.toUpperCase();

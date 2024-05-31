@@ -1,10 +1,10 @@
 body {
+  /* background-color: #c9c5ef; */
   height: 100%;
   margin: 0;
   background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
   overflow: hidden;
-  }
-
+}
 
 
 .container{
@@ -83,7 +83,7 @@ body {
 
 
 .flipbook {
- 
+  /* position: fixed; */
   transition: margin-left 0.25s ease-out;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -91,7 +91,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-left: 1%;
+  margin-left: -10%;
   margin-top: 5%;
   width: 1800px;
   height: 1440px;
@@ -141,13 +141,11 @@ body {
   max-height: 100%;
 }
 
-
 /* Stiluri pentru containerul imaginii */
 .image-container {
   text-align: center;
   cursor: pointer;
 }
-
 
 app-image-video-switcher {
   width: 5px;
@@ -243,10 +241,12 @@ video {
 
 /* Add animation for moving flipbook to the right */
 .flipbook.move-right {
-  margin-left: -450px; /* Adjust this value as needed */
+  margin-left: 270px; /* Adjust this value as needed */
   transform: translate(50%); /* Move to the right */
   transition: margin-left 1s ease, transform 1s ease; /* Add transition effect */
 }
+
+
 
   /* .flipbook.move-left {
   margin-right: 50%; Adjust this value as needed 

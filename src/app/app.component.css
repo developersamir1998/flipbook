@@ -74,7 +74,6 @@ body {
 .flipbook {
  
   transition: margin-left 0.25s ease-out;
- 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -84,7 +83,7 @@ body {
   margin-left: 1%;
   margin-top: 5%;
   width: 1800px;
-  height: 1500px;
+  height: 1440px;
  
 }
 
@@ -95,7 +94,7 @@ body {
   top: 0;
   right: 0;
   width: 1800px;
-  height: 1500px;
+  height: 1440px;
  
   border-radius: 1px 1px 1px 1px;
 }
@@ -144,6 +143,9 @@ app-image-video-switcher {
   height: 50px;
 }
 
+#flipbook.visible{
+  box-shadow: 11px 15px 16px 20px #888888;
+}
 
 /* Stiluri pentru fereastra modală video */
 .video-modal {

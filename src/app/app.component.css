@@ -36,22 +36,33 @@ body {
   /* backdrop-filter: blur(43px); */
   /* -webkit-backdrop-filter: blur(43px); */
 }
-.logo{
+#logo{
   background-image: url("../assets/images/LivingLab_Logo.png");
-  margin-top: 105px;
+  /* margin-top: 105px;
+  margin-left: 465px; */
+  background-size: 450px;
+  width: 450px;
+  height: 80px;
+  display: none;
+}
+#logo-container{
+  margin-top: 76px;
   margin-left: 465px;
   background-size: 450px;
   width: 450px;
   height: 80px;
 }
 
-
-/* .logo img
-{
+#logo.visibleLogo{
+  margin-top: 76px;
+  margin-left: 465px;
+  background-size: 450px;
   width: 450px;
   height: 80px;
-} */
-
+}
+#logo.visibleLogo{
+  display: block;
+}
 
 
 

@@ -1,10 +1,10 @@
 body {
-  /* background-color: #c9c5ef; */
   height: 100%;
   margin: 0;
   background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
   overflow: hidden;
-}
+  }
+
 
 
 .container{

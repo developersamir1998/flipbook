@@ -6,28 +6,28 @@
   height: 100vh;
 }
 #rate-experience {
-  position: absolute;
-  top: 152px; /* 152 pixels from the top of the page */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  width: 676px; /* Set width to 676px */
-  height: 49px; /* Set height to 49px */
-  font-size: 36px; /* Increase font size to 36px */
-  color: #DADADA; /* Text color */
-  background-color: transparent; /* Transparent background */
-  text-align: center; /* Center align text */
-  line-height: 49px; /* Center text vertically */
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 49px;
+    font-size: 43px;
+    color: #DADADA;
+    background-color: transparent;
+    text-align: center;
+    line-height: 49px;
 }
 
 #emojis {
-  position: absolute;
-  top: 300px; /* 300 pixels below the paragraph tag */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  width: calc(84px * 5 + 66.04px * 4); /* Total width of emojis and gaps */
-  display: flex; /* Use flexbox to align emojis */
-  justify-content: space-between; /* Distribute space between emojis */
-  gap: 66.04px; /* Gap between emojis */
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(84px* 5 + 99.04px* 4);
+    display: flex;
+    justify-content: space-between;
+    gap: 66.04px;
 }
 
 #emojis input[type="radio"] {
@@ -35,8 +35,8 @@
 }
 
 #emojis label {
-  width: 84px; /* Set the width of the label */
-  height: 84px; /* Set the height of the label */
+  width: 110px; /* Set the width of the label */
+  height: 110px; /* Set the height of the label */
   cursor: pointer; /* Change the cursor to pointer */
   display: flex; /* Use flexbox to align the image inside */
   justify-content: center; /* Center the image horizontally */
@@ -80,20 +80,20 @@
 
 #comment-box-container {
   position: absolute;
-  top: 400px; /* Adjusted the distance to 200 pixels below the emojis */
+  top: 550px; /* Adjusted the distance to 200 pixels below the emojis */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */
-  width: 676px; /* Same width as the paragraph tag */
+  width: 810px; /* Same width as the paragraph tag */
 }
 
 #comment-box {
   width: 100%; /* Full width of the container */
-  height: 200px; /* Set height to 200px */
+  height: 230px; /* Set height to 200px */
   border: 3px dotted #DADADA; /* Size of the dotted border */
   background-color: transparent; /* Transparent background */
   color: #DADADA; /* Text color */
   padding: 20px; /* Padding inside the text box */
-  font-size: 24px; /* Font size */
+  font-size: 36px; /* Font size */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   resize: none; /* Prevent resizing */
   border-radius: 15px; /* Border radius for curvature */
@@ -102,21 +102,21 @@
 
 #comment-box::placeholder {
   color: #DADADA; /* Placeholder text color */
-  font-size: 24px; /* Set placeholder font size to 24px */
+  font-size: 36px; /* Set placeholder font size to 24px */
 }
 
 #submit-btn {
   width: 225px;/* Set width to 151px */
   height: 70px;/* Set height to 54px */
-  background-color: #007bff; /* Standard blue background color */
+  background-color: #A5A3A3; /* Standard blue background color */
   color: #DADADA; /* Text color */
-  font-size: 24px; /* Font size */
+  font-size: 35px; /* Font size */
   border: none; /* Remove border */
-  border-radius: 5px; /* Border radius for curvature */
+  border-radius: 20px; /* Border radius for curvature */
   cursor: pointer; /* Change cursor to pointer on hover */
   /* margin: calc(40% + 72px) auto 0;  */
   /* 72px below the text area, centered horizontally */
   display: block; /* Make the button a block element to center it horizontally */
-  margin-top: 850px;
-  margin-left: 315px;
+  margin-top: 920px;
+  margin-left: 410px;
 }

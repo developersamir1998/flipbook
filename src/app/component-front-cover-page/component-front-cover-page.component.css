@@ -1,149 +1,143 @@
-.temp{
-  height: 100%;
-  width: 100%
-}
-  
-  .feedback-container{
-    
-    display:flex;
-    height:100%;
-    width:100%;
-    background-color: #eee;
-
-  }
-  .img-container{
-    background-image: url("../../assets/images/Group 18997.png");
-    background-size: cover;
-    height: 1436.35px;
-    width: 100%;
-
-  }
-  
-.custom-button {
-  
-  padding: 10px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.custom-button.selected {
-  background-color: #e4f70f; /* Change the background color for selected button */
-}
-
-.custom-button:hover {
-  background-color: #e4f70f;
-}
-
-.clientCard {
-  position: relative;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 40%;
-  height: 15%;
-  border-radius: 7%;
+.page, .hard {
+  width: 1100px;
+  height: 1440px;
   background-color: white;
-  overflow: hidden;
-}
-.clientCardName{
-  display: block;
+  border: 1px solid #ccc;
   position: absolute;
-  top: 25%;
-  width: 100%;
-  /* transform: translateY(-50%); */
-  font-size: 50px;
-  font-style: normal;
-  text-align: center;
+  backface-visibility: hidden;
+  display: flex;
   justify-content: center;
-}
-.clientCardDate{
-    background-color: black;
-    height: 80px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    border-radius: 10px;
+  align-items: center;
+  font-size: 24px;
 }
 
-/* .visitorButton {
-  padding: 10px; */
-   /* Adds padding around the button text */
-  /* background-color: white; */
-   /* Sets the background color of the button */
-  /* color: black;  */
-  /* Sets the text color of the button */
-  /* text-align: center; */
-   /* Centers the text horizontally within the button */
-  /* width: 300px;  */
-  /* Sets the width of the button */
-  /* border-radius: 20px; */
-   /* Adds rounded corners to the button */
-  /* margin-top: 5px;  */
-  /* Adds margin at the top of the button */
-  /* border: 1px solid black;  */
-  /* Adds a solid border around the button */
-  /* cursor: pointer;  */
-  /* Changes cursor to pointer on hover */
-/* } */
-
-/* .visitorButton.selected { */
-  /* background-color: #007bff;  */
-  /* Change background color when selected */
-  /* color: #fff;  */
-  /* Change text color when selected */
-  /* border-color: #007bff; */
-   /* Change border color when selected */
-/* } */
-
-
- .button-container {
-    margin-top: 4%;
-    margin-left: 20%;
-    margin-right: 20%;
-  }
-  .name-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.hard {
+  background: #333;
+  color: white;
+  font-weight: bold;
+  transform-origin: left top;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.name-card {
-    width: calc(33.33% - 10px); /* Adjust the width as needed for 3 buttons */
-    margin-bottom: 20px;
-    box-sizing: border-box;
+.page1 {
+  background-image: url('../../assets/img/page1.png');
+  background-size: 1098px 1529px;
+  background-repeat: no-repeat;
 }
 
-.visitorButton {
-    display: block;
-    width: 100%; /* Allow button width to take full width of parent */
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    padding: 20px 15px; /* Adjust padding as needed */
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    box-sizing: border-box;
-    white-space: nowrap; /* Prevent line breaks within button */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis for overflow text */
-    border-radius: 50px; /* Adjust the border-radius to make it semi-circle */
-    margin-right: 10px; /* Add margin between buttons */
-    margin-left: 10px; /* Add margin between buttons */
+#logo-container {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.visitorName {
-    font-weight: bold; /* Make client name bold */
-    font-size: 24px; /* Increase font size to cover button space */
-    padding: 5px 0; /* Add padding to client name */
+#visitor-book-logo {
+  width: 100%;
+  height: 100%;
 }
 
-.visitorButton:hover {
-    background-color: blue;
+#name-date-container {
+  position: absolute;
+  top: 450px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  height: 100px;
+  background-color: rgba(13, 45, 85, 0.6);
+  border: 1px solid #0D2D55;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
-.selected {
-    background-color: blue;
-    color: white;
+#name {
+  font-size: 48px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+
+#date {
+  font-size: 24px;
+  color: white;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+#visitor-selection-container {
+  position: absolute;
+  top: 600px; /* Adjusted to position below the updated name-date-container */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;
+  height: 452px;
+  background-color: rgba(13, 45, 85, 0.6);
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+#select-visitor-heading {
+  color: white;
+  font-size: 35px;
+  font-weight: lighter;
+  width: 300px;
+  height: 50px;
+  padding-top: 32px;
+  padding-bottom: 50px;
+  padding-left: 16px;
+}
+
+#visitor-list {
+  max-height: 305px;
+  overflow-y: scroll;
+}
+
+.visitor-button {
+  width: 500px;
+  height: 61.16px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 1px;
+  border-bottom: 0.5px solid #C9FBFF;
+}
+
+.visitor-button:active {
+  background-color: #237286a1;
+}
+
+.visitor-button.selected {
+  background-color: #237386;
+}
+
+#visitor-list::-webkit-scrollbar {
+  display: none;
+}
+
+.visitor-button:last-child {
+  border-bottom: none;
+}
+
+.visitor-name,
+.visitor-designation {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32px;
 }

@@ -1,58 +1,23 @@
-<!-- component-front-cover-page.component.html -->
-<div class="feedback-container" >
- 
-  
-  <div class="img-container">
-  <!-- <img class="temp" src="../../assets/images/Group 18997.png" alt="alternatetext"> -->
-  <!-- <h2>Feedback Page</h2> -->
+<div class="hard page1">
 
-  <div class="clientCard">
-    <!-- <div class="clientCardName"><h1>{{recievedClientName}}</h1></div> -->
-    <div *ngIf="recievedClientName" class="clientCardName">
-      <p><b>{{ recievedClientName }}</b></p>
-    </div>
-    <br/>
-    <div class="clientCardDate" >
-      <h1 style="
-      margin-left: 250px;
-      padding: 20px;
-      width: 500px;
-      color: white;">{{ currentDate }}</h1>
-    </div>
+  <div id="logo-container">
+      <img src="../../assets/img/Visitor_book.png" alt="Visitor Book Logo" id="visitor-book-logo">
   </div>
 
-  
+  <div id="name-date-container">
+      <span id="name">{{recievedClientName}}</span>
+      <span id="date">{{ currentDate }}</span>
+  </div>
 
-
-
-  <div class="button-container">
-    
-    <!-- <div *ngIf="recievedClientName">
-      
-      <div *ngFor="let visitor of visitorDetails">
-        <button class="visitorButton"  
-        [class.selected]="isVisitorSelected(visitor.visitor_name)"
-        (click)="handleVisitorSelection(visitor.visitor_name)">
-        {{ visitor.visitor_name }}
-        </button>
+  <div id="visitor-selection-container">
+      <h2 id="select-visitor-heading">Select Visitor</h2>
+      <div id="visitor-list">
+        <ng-container *ngFor="let visitor of visitorDetails; let i = index">
+          <button class="visitor-button">
+              <span class="visitor-name">{{ visitor.visitor_name }}</span>
+              <span class="visitor-designation">{{ visitor.visitor_designation }}</span>
+          </button>
+        </ng-container>
       </div>
-      
-    </div> -->
-    <div *ngIf="recievedClientName">
-      <div class="name-section">
-          <ng-container *ngFor="let visitor of visitorDetails; let i = index">
-              <div class="name-card" [ngClass]="{'single-client': visitorDetails.length <= 3 && i === visitorDetails.length - 1}">
-                  <button class="visitorButton"  
-                      [class.selected]="isVisitorSelected(visitor.visitor_name)"
-                      (click)="handleVisitorSelection(visitor.visitor_name)">
-                      <span class="visitorName">{{ visitor.visitor_name }}</span>
-                  </button>
-              </div>
-          </ng-container>
-      </div>
-  </div>
-  
-  
-  </div>
-</div>
+  </div>                   
 </div>

@@ -36,16 +36,23 @@ body {
   /* backdrop-filter: blur(43px); */
   /* -webkit-backdrop-filter: blur(43px); */
 }
-.logo{
+#logo{
   background-image: url("../assets/images/LivingLab_Logo.png");
-  margin-top: 105px;
+  background-size: 450px;
+  width: 450px;
+  height: 80px;
+  display: none;
+}
+#logo-container{
+  margin-top: 76px;
   margin-left: 465px;
   background-size: 450px;
   width: 450px;
   height: 80px;
 }
-
-
+#logo.visibleLogo{
+  display: block;
+}
 /* .logo img
 {
   width: 450px;
@@ -84,7 +91,7 @@ body {
   margin-left: 17%;
   margin-top: 5%;
   width: 1800px;
-  height: 1500px;
+  height: 1440px;
  
 }
 
@@ -95,7 +102,7 @@ body {
   top: 0;
   right: 0;
   width: 1800px;
-  height: 1500px;
+  height: 1440px;
  
   border-radius: 1px 1px 1px 1px;
 }
@@ -144,6 +151,9 @@ app-image-video-switcher {
   height: 50px;
 }
 
+#flipbook.visible{
+  box-shadow: 11px 15px 16px 20px #888888;
+}
 
 /* Stiluri pentru fereastra modală video */
 .video-modal {

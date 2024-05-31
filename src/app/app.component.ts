@@ -96,12 +96,30 @@ export class AppComponent implements OnInit {
 
   private setupFlipbook(): void {
     if (this.flipbookEL) {
-      ($(this.flipbookEL) as any).turn({
+      ($(this.flipbookEL) as any).turn({      
+        width: 2200,  
         autoCenter: true,
         when: {
           turning: (event: any, page: number, view: any) => {
             console.log("corner clicked!=",page);
+
+            if(page>1 && page<6)
+              {
+                //add shadow
+                ($(this.flipbookEL) as any).addClass("visible");
+                //display logo
+                ($("#logo") as any).addClass("visibleLogo");
+              }
+              else
+              {
+                //remove shadow
+                ($(this.flipbookEL) as any).removeClass("visible");
+                //display logo
+                ($("#logo") as any).removeClass("visibleLogo");
+              }
+
             if (page >= 3 && page <= 12) {
+              
               this.playAudio_flip(); // Play flip sound when turning pages 3 to 12 
               //the sound of turning the pages, inside the book
             }

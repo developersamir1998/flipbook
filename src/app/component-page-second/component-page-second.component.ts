@@ -18,7 +18,7 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   overallRating: number = 0; // Initialize as needed
   visitComment: string = ''; // Initialize as needed
   demoFeedback: Array<{ demo_name: string, demo_rating: number,demo_url:string, question_feedback?: Array<{ question: string, question_rating: number }> }> = [];
-
+  //  demoDescription: string='';
   constructor(
     private feedbackDataService: FeedbackDataService,
     private http: HttpClient  // Inject the HttpClient module
@@ -44,7 +44,7 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
     this.feedbackDataService.getFilteredData().subscribe(feedback => {
       this.selectedFeedback = feedback;
       console.log("getfilteredData() method called in second page=",feedback);
-
+       
       // Clear the form when a new feedback is selected
       this.resetForm();
     });
@@ -73,6 +73,8 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   // }
   setDemoRating(rating: number, demoIndex: number): void {
     const demoName = this.selectedFeedback?.demo_details[demoIndex]?.demo_name;
+    const demoDescription= this.selectedFeedback?.demo_details[demoIndex]?.demo_description;
+   console.log("in second page demo description"+demoDescription)
    // const demoUrl = this.selectedFeedback?.demo_details[demoIndex]?.demo_url;
    // this.demoFeedback[demoIndex] = { demo_name: demoName, demo_rating: rating, question_feedback: [] };
     const demoUrl="coming soon !!! ";

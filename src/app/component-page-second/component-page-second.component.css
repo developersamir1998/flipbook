@@ -120,3 +120,30 @@
 }
 
 
+.info-symbol {
+  position: relative;
+  cursor: pointer;
+  margin-left: 5px; /* Add some spacing between the label and the symbol */
+  font-size: 3.5em;
+}
+
+.info-symbol:hover::after {
+  font-size: 27px;
+  content: attr(title);
+  position: absolute;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+  top: -45%;
+  left: 550%;
+  transform: translateX(-50%);
+  white-space: normal;
+  width: 355px;
+  z-index: 1000;
+  opacity: 0.9;
+  font: normal normal normal Nunito Sans;
+  text-align: left;
+}
+
+

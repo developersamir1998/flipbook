@@ -81,7 +81,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-left: 17%;
+  margin-left: 1%;
   margin-top: 5%;
   width: 1800px;
   height: 1500px;
@@ -226,4 +226,34 @@ video {
 .button_video:hover {
   background-color: #f80606;
   color: #fff;
+}
+
+/* Add animation for moving flipbook to the right */
+.flipbook.move-right {
+  margin-left: -450px; /* Adjust this value as needed */
+  transform: translate(50%); /* Move to the right */
+  transition: margin-left 1s ease, transform 1s ease; /* Add transition effect */
+}
+
+  /* .flipbook.move-left {
+  margin-right: 50%; Adjust this value as needed 
+  transform: translate(50%);  Move to the right 
+  transition: margin-left 1s ease, transform 1s ease; Add transition effect 
+}*/
+
+.flipbook-back {
+ 
+  transition: margin-left 0.25s ease-out;
+ 
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 800px;
+  margin-top: 5%;
+  width: 1800px;
+  height: 1500px;
+ 
 }

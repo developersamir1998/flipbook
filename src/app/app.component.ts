@@ -11,6 +11,7 @@ import 'turn.js'; // Import another JavaScript library (turn.js)
 import { Router } from '@angular/router';
 import { FeedbackDataService } from './services/feedback-data.service';
 import { ActivatedRoute } from '@angular/router';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
     // this.audio_close.load();
   }
 
+  
   playAudio_flip() {
     this.audio_flip.play(); // Function to play flip sound
   }
@@ -95,6 +97,7 @@ export class AppComponent implements OnInit {
   }
 
   private setupFlipbook(): void {
+
     if (this.flipbookEL) {
       ($(this.flipbookEL) as any).turn({
         autoCenter: true,
@@ -109,7 +112,19 @@ export class AppComponent implements OnInit {
               this.playAudio_close(); // Play book closing sound on pages 1, 2, 13, and 14
               //sound of opening and closing the book allocated to the pages from the begining and the end of the book
             }
-          }
+          },
+          turned: (event: any, page: number, view: any) => {
+            if (page > 1 ) {
+              this.moveFlipbookToRight(); // Move flipbook to the right after turning a page
+              console.log(page) 
+            }
+            //add else if to if page is equlas to 5 it should remove moverihgth
+            if(page > 5){
+              this.moveFlipbookToLeft();
+              }
+          },
+         
+
         }
       });
 
@@ -119,7 +134,14 @@ export class AppComponent implements OnInit {
     }
   }
 
-  
+  private moveFlipbookToRight(): void {
+    this.renderer.addClass(this.flipbookEL, 'move-right'); // Add CSS class to move flipbook to the right
+  }
+  private moveFlipbookToLeft(): void {
+    this.renderer.addClass(this.flipbookEL, 'flipbook-back'); // Add CSS class to move flipbook to the left
+    this.renderer.removeClass(this.flipbookEL, 'move-right');
+  }
+
   
   
   //end of that

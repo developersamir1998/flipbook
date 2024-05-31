@@ -13,7 +13,9 @@
       <form #feedbackForm="ngForm">
         <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
           <div class="demo-box">
-            <label>{{ demo.demo_name }}</label>
+            <label>{{ demo.demo_name }} </label>
+            <span class="info-symbol" [title]="demo.demo_description">🛈</span>
+            
             
             <!-- <div *ngFor="let question of demo.demo_questions; let questionIndex = index">
               <h4>{{ question.questionText }}</h4> -->

@@ -1,70 +1,22 @@
 
-<div class="background-container">
-    <div class="container">
-        <h1>Would you like to rate your overall experience?</h1>
-        <div class="icons">
-            <span (click)="setOverallRating(5)" [ngClass]="{'selected': overallRating === 5}">😊</span>
-            <span (click)="setOverallRating(4)" [ngClass]="{'selected': overallRating === 4}">😄</span>
-            <span (click)="setOverallRating(3)" [ngClass]="{'selected': overallRating === 3}">😐</span>
-            <span (click)="setOverallRating(2)" [ngClass]="{'selected': overallRating === 2}">😕</span>
-            <span (click)="setOverallRating(1)" [ngClass]="{'selected': overallRating === 1}">😞</span>
-          </div>
-         
-        <textarea placeholder="Write additional comments here..." [(ngModel)]="comment" (input)="handleCommentInput($event)"></textarea>
-        <button (click)="feedbacksubmit()">Submit</button>
-    </div>
+<div class="page left page5">
+  
+ <p id="rate-experience">Would you like to rate overall experience?</p>
+  <div id="emojis">
+      <input type="radio" id="emoji1" name="emoji" value="1">
+      <label for="emoji1"></label>
+      <input type="radio" id="emoji2" name="emoji" value="2">
+      <label for="emoji2"></label>
+      <input type="radio" id="emoji3" name="emoji" value="3">
+      <label for="emoji3"></label>
+      <input type="radio" id="emoji4" name="emoji" value="4">
+      <label for="emoji4"></label>
+      <input type="radio" id="emoji5" name="emoji" value="5">
+      <label for="emoji5"></label>
+  </div>   
+     <div id="comment-box-container">
+        <textarea id="comment-box" placeholder="Write additional comments here..." [(ngModel)]="comment" (input)="handleCommentInput($event)"></textarea>
+      </div>  
+      
+      <button id="submit-btn" (click)="feedbacksubmit()">I'm Done</button>                           
 </div>
-
-<!-- <div class="modal" *ngIf="feedbackSubmitted">
-    <div class="modal-content">
-      <h2>Feedback Submitted Successfully</h2>
-      <button (click)="onPopupfirstClicked()">FOR ANOTHER FEEDBACK</button>
-      <button (click)="onPopuphomeClicked()">GO TO HOME PAGE</button>    
-    </div>
-  </div> -->
-
-<!-- To take input from smile code below -->
-
-<!-- HTML -->
-<!-- <div class="stars">
-    <input type="radio" id="star5" name="rating" value="5">
-    <label for="star5"></label>
-    <input type="radio" id="star4" name="rating" value="4">
-    <label for="star4"></label> -->
-    <!-- Add more stars as needed -->
-<!-- </div> -->
-
-<!-- CSS -->
-<!-- .stars {
-    display: inline-block;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-label {
-    font-size: 24px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-input[type="radio"]:checked + label {
-    color: #f1c40f; /* Filled star color */
-} -->
-
-
-
-<!-- JavaScript -->
-
-<!-- <script>
-    const stars = document.querySelectorAll('input[type="radio"]');
-    stars.forEach((star) => {
-        star.addEventListener('change', (e) => {
-            const rating = e.target.value;
-            console.log(`User rated ${rating} stars.`);
-            // You can perform additional actions here
-        });
-    });
-</script> -->
-

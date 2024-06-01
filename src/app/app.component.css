@@ -47,15 +47,13 @@ body {
 }
 #logo-container{
   margin-top: 76px;
-  margin-left: 465px;
+  margin-left: 280px;
   background-size: 450px;
   width: 450px;
   height: 80px;
 }
 
 #logo.visibleLogo{
-  margin-top: 76px;
-  margin-left: 465px;
   background-size: 450px;
   width: 450px;
   height: 80px;

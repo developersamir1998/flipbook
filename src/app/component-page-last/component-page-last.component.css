@@ -1,48 +1,51 @@
 .background-container {
-    display:flex;
-    height: 1500px;
-    width: 900px;
-    border: none;
-    padding: 0%;
-    margin: 0%;
-    background-color: black;
-    background-image: url("../../assets/images/Group_18994.png"); 
-    background-repeat: no-repeat;
-    background-size: cover;
+  display: flex;
+  height: 1440px;
+  width: 1095px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  background-image: url("../../assets/images/Group_18994.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  }
-  .thumbsup
-  {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    /* height: 100vh; */
-    margin-top: 50%;
-    margin-left: 40%;
-  }
-  .thumbsupimg
-  {
-    background-image: url("../../assets/images/Group_18889.png");
-    width: 150px;
-    height: 160px;
-    /* margin-left: 202px;
-    margin-top: 180.4px; */
-  }
-  .amazing
-  {
-    background-image: url("../../assets/images/Group18890.png");
-    margin-left: 8px;
-    margin-top: 8px;
-    width: 125px;
-    height: 30px;
-  }
-  .remark
-  {
-    margin-left: -150px;
-    margin-top: 20px;
-    width: 500px;
-    height: 22px;
+.thumbsup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjust if needed */
+  height: 85%; /* Adjust if needed */
+}
+
+.thumbsupimg {
+  width: 300px; /* Desired width */
+  height: 300px; /* Desired height */
+  background-image: url("../../assets/images/Group_18889.png");
+  background-size: cover; /* Cover the entire element */
+  background-repeat: no-repeat; /* Prevent background image repetition */
+  background-position: center; /* Center the background image */
+}
+
+.amazing {
+  background-image: url("../../assets/images/Group18890.png");
+  background-size: cover; /* Cover the entire element */
+  background-repeat: no-repeat; /* Prevent background image repetition */
+  background-position: center; /* Center the background image */
+  margin-left: 8px;
+  margin-top: 30px;
+  width: 235px;
+  height: 60px;
+}
+
+.remark {
+  margin-left: -20px;
+    margin-top: 45px;
+    width: 1000px;
+    height: 45px;
     text-align: center;
     color: white;
-    font-size: 30px;
-  }
+    font-size: 40px;
+}

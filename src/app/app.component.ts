@@ -25,24 +25,24 @@ export class AppComponent implements OnInit {
   private audio_flip: HTMLAudioElement; // Define an HTML audio element for flip sounds
   private audio_close: HTMLAudioElement; // Define an HTML audio element for book closing sounds
   isVideoOpen = false; // Initialize a flag for video open state
-  
+
 
   constructor(
-    private renderer: Renderer2, 
+    private renderer: Renderer2,
     private el: ElementRef,
-    private router: Router, 
-    private feedbackDataService: FeedbackDataService, 
+    private router: Router,
+    private feedbackDataService: FeedbackDataService,
     private route: ActivatedRoute
   ) {
     // Constructor function to initialize the component
-    this.audio_flip = new Audio('assets/audio/flip_book_page.mp3'); // Initialize flip sound audio
+    this.audio_flip = new Audio('assets/audio/Pageturn.mp3'); // Initialize flip sound audio
     // this.audio_flip.load();
 
-    this.audio_close = new Audio('assets/audio/book-opening.mp3'); // Initialize book closing sound audio
+    this.audio_close = new Audio('assets/audio/Pageturn.mp3'); // Initialize book closing sound audio
     // this.audio_close.load();
   }
 
-  
+
   playAudio_flip() {
     this.audio_flip.play(); // Function to play flip sound
   }
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
     this.imageUrl = localStorage.getItem('imageData'); // Get image URL from local/static storage
     this.textContent = localStorage.getItem('textConte​nt'); // Get text content from local/static storage
 
-   
+
   }
 
   // Utility function to format date as DD-MM-YYYY
@@ -77,19 +77,19 @@ export class AppComponent implements OnInit {
 
   // Get current date in DD-MM-YYYY format
   currentDate: string = this.formatDate(new Date().toISOString().split('T')[0]);
-  
+
   fetchVisitData(clientName: string, visitDate: string): void {
     fetch('http://localhost:5000/api/visit/visitList')
       .then(response => response.json())
       .then(data => {
 
-        console.log("fetched data through api  in App.ts=",data);
+        console.log("fetched data through api  in App.ts=", data);
 
         const filteredVisitByDate = data.filter((item: { visit_date: string; }) => this.formatDate(item.visit_date) === this.currentDate);
         const filteredData = filteredVisitByDate.find((item: { client_name: string; }) => item.client_name === clientName);
-        console.log("filtered data in App.ts=",filteredData);
+        console.log("filtered data in App.ts=", filteredData);
         this.feedbackDataService.setFilteredData(filteredData);
-        
+
       })
       .catch(error => {
         console.error('Error Fetching Data:', error);
@@ -99,30 +99,48 @@ export class AppComponent implements OnInit {
   private setupFlipbook(): void {
 
     if (this.flipbookEL) {
-      ($(this.flipbookEL) as any).turn({      
-        width: 2200,  
+      ($(this.flipbookEL) as any).turn({
+        width: 2200,
         autoCenter: true,
+        acceleration: false, // Disable hardware acceleration for smoother transitions
+        duration: 1500, // Set the duration of the page flip to 2000ms (2 seconds)
         when: {
           turning: (event: any, page: number, view: any) => {
-            console.log("corner clicked!=",page);
+            console.log("corner clicked!=", page);
 
-            if(page>1 && page<6)
-              {
-                //add shadow
-                ($(this.flipbookEL) as any).addClass("visible");
-                //display logo
-                ($("#logo") as any).addClass("visibleLogo");
-              }
-              else
-              {
-                //remove shadow
-                ($(this.flipbookEL) as any).removeClass("visible");
-                //display logo
-                ($("#logo") as any).removeClass("visibleLogo");
-              }
+            if (page == 1) {
+              //add text at page 1
+              ($("#text-page1") as any).addClass("visibleTextPage1");
+            }
+            if (page > 1) {
+              // remove text at page 1
+              ($("#text-page1") as any).removeClass("visibleTextPage1");
+            }
+            if (page == 6) {
+              //add text at page 6
+              ($("#text-page6") as any).addClass("visibleTextPage6");
+            }
+            if (page < 6) {
+              // remove text at page 6
+              ($("#text-page6") as any).removeClass("visibleTextPage6");
+            }
+
+
+            if (page > 1 && page < 6) {
+              //add shadow
+              ($(this.flipbookEL) as any).addClass("visible");
+              //display logo
+              ($("#logo") as any).addClass("visibleLogo");
+            }
+            else {
+              //remove shadow
+              ($(this.flipbookEL) as any).removeClass("visible");
+              //display logo
+              ($("#logo") as any).removeClass("visibleLogo");
+            }
 
             if (page >= 3 && page <= 12) {
-              
+
               this.playAudio_flip(); // Play flip sound when turning pages 3 to 12 
               //the sound of turning the pages, inside the book
             }
@@ -132,16 +150,17 @@ export class AppComponent implements OnInit {
             }
           },
           turned: (event: any, page: number, view: any) => {
-            if (page > 1 ) {
-              this.moveFlipbookToRight(); // Move flipbook to the right after turning a page
-              console.log(page) 
+            if (page > 1) {
+              // this.moveFlipbookToRight(); 
+              // Move flipbook to the right after turning a page
+              console.log(page)
             }
             //add else if to if page is equlas to 5 it should remove moverihgth
-            if(page > 5){
-              this.moveFlipbookToLeft();
-              }
+            if (page > 5) {
+              // this.moveFlipbookToLeft();
+            }
           },
-         
+
 
         }
       });
@@ -160,8 +179,8 @@ export class AppComponent implements OnInit {
     this.renderer.removeClass(this.flipbookEL, 'move-right');
   }
 
-  
-  
+
+
   //end of that
 
   selectedFile: File | null = null; // Initialize a selected file variable
@@ -194,5 +213,5 @@ export class AppComponent implements OnInit {
     }
   }
 
- 
+
 }

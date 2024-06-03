@@ -66,6 +66,7 @@ body {
 
 #text-page1{
   background-image: url("../assets/img/Visitor_book.png");
+  position: absolute;
   /* margin-top: 105px;
   margin-left: 465px; */
   background-size: 450px;
@@ -83,9 +84,10 @@ body {
 }
 
 #text-page1.visibleTextPage1{
-  background-size: 450px;
-  width: 450px;
-  height: 80px;
+  background-size: 675px;
+  width: 674px;
+  height: 125px;
+  margin-top: 655px
 }
 #text-page1.visibleTextPage1{
   display: block;
@@ -111,9 +113,12 @@ body {
 }
 
 #text-page6.visibleTextPage6{
-  background-size: 450px;
-  width: 450px;
-  height: 80px;
+  /* background-size: 450px; */
+  position: absolute;
+  background-size: 675px;
+  width: 674px;
+  height: 125px;
+  margin-top: 655px;
 }
 #text-page6.visibleTextPage6{
   display: block;
@@ -139,6 +144,8 @@ body {
 .flipbook {
   /* position: fixed; */
   /* transition: margin-left 0.25s ease-out; */
+ 
+  position: absolute;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -146,9 +153,15 @@ body {
   -ms-user-select: none;
   user-select: none;
   margin-left: 10%;
-  /* margin-top: 5%; */
+  margin-top: -65px;
   width: 1800px;
   height: 1440px;
+
+   /* added here */
+   border-radius: 30px;
+  
+   
+ 
  
 }
 
@@ -160,8 +173,10 @@ body {
   right: 0;
   width: 1800px;
   height: 1440px;
- 
-  border-radius: 5px 5px 5px 5px;
+  /* border: 2px solid white;
+  border-radius: 30px; */
+  /* border-radius: 5px 5px 5px 5px; */
+  border-radius: 30px;
 }
 
 

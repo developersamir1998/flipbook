@@ -2,7 +2,7 @@
   /* align-items: center;
   justify-content: center; */
   display: flex;
-  height: 100vh;
+  height: 79vh;
   /* height: 1500px;
     width: 900px; */
   /* border: none;
@@ -12,6 +12,12 @@
   background-image: url("../../assets/images/second_right.png");
   background-repeat: no-repeat;
   background-size: cover;
+   /* added here */
+   /* border-radius: 30px; */
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+   border: 2px solid white;
+   overflow: hidden;
 }
 
 .heading {

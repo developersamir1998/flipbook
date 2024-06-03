@@ -3,120 +3,168 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  height: 100vh;
+  height: 79vh;
+  /* added here */
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: 8px solid white;
+  overflow: hidden;
 }
+
 #rate-experience {
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1000px;
-    height: 49px;
-    font-size: 43px;
-    color: #DADADA;
-    background-color: transparent;
-    text-align: center;
-    line-height: 49px;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 49px;
+  font-size: 43px;
+  color: #DADADA;
+  background-color: transparent;
+  text-align: center;
+  line-height: 49px;
 }
 
 #emojis {
-    position: absolute;
-    top: 380px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(84px* 5 + 99.04px* 4);
-    display: flex;
-    justify-content: space-between;
-    gap: 66.04px;
+  position: absolute;
+  top: 380px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(84px* 5 + 99.04px* 4);
+  display: flex;
+  justify-content: space-between;
+  gap: 66.04px;
 }
 
 #emojis input[type="radio"] {
-  display: none; /* Hide the default radio button */
+  display: none;
+  /* Hide the default radio button */
 }
 
 #emojis label {
-  width: 110px; /* Set the width of the label */
-  height: 110px; /* Set the height of the label */
-  cursor: pointer; /* Change the cursor to pointer */
-  display: flex; /* Use flexbox to align the image inside */
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  background-size: cover; /* Cover the label with the image */
+  width: 110px;
+  /* Set the width of the label */
+  height: 110px;
+  /* Set the height of the label */
+  cursor: pointer;
+  /* Change the cursor to pointer */
+  display: flex;
+  /* Use flexbox to align the image inside */
+  justify-content: center;
+  /* Center the image horizontally */
+  align-items: center;
+  /* Center the image vertically */
+  background-size: cover;
+  /* Cover the label with the image */
 }
 
 /* Initial background images */
-#emoji1 + label {
+#emoji1+label {
   background-image: url('../../assets/emojis/e1.png');
 }
-#emoji2 + label {
+
+#emoji2+label {
   background-image: url('../../assets/emojis/e2.png');
 }
-#emoji3 + label {
+
+#emoji3+label {
   background-image: url('../../assets/emojis/e3.png');
 }
-#emoji4 + label {
+
+#emoji4+label {
   background-image: url('../../assets/emojis/e4.png');
 }
-#emoji5 + label {
+
+#emoji5+label {
   background-image: url('../../assets/emojis/e5.png');
 }
 
 /* Background images for checked state */
-#emoji1:checked + label {
+#emoji1:checked+label {
   background-image: url('../../assets/emojis/e11.png');
 }
-#emoji2:checked + label {
+
+#emoji2:checked+label {
   background-image: url('../../assets/emojis/e22.png');
 }
-#emoji3:checked + label {
+
+#emoji3:checked+label {
   background-image: url('../../assets/emojis/e33.png');
 }
-#emoji4:checked + label {
+
+#emoji4:checked+label {
   background-image: url('../../assets/emojis/e44.png');
 }
-#emoji5:checked + label {
+
+#emoji5:checked+label {
   background-image: url('../../assets/emojis/e55.png');
 }
 
 #comment-box-container {
   position: absolute;
-  top: 550px; /* Adjusted the distance to 200 pixels below the emojis */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  width: 810px; /* Same width as the paragraph tag */
+  top: 550px;
+  /* Adjusted the distance to 200 pixels below the emojis */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+  width: 810px;
+  /* Same width as the paragraph tag */
 }
 
 #comment-box {
-  width: 100%; /* Full width of the container */
-  height: 230px; /* Set height to 200px */
-  border: 3px dotted #DADADA; /* Size of the dotted border */
-  background-color: transparent; /* Transparent background */
-  color: #DADADA; /* Text color */
-  padding: 20px; /* Padding inside the text box */
-  font-size: 36px; /* Font size */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  resize: none; /* Prevent resizing */
-  border-radius: 15px; /* Border radius for curvature */
-  margin-top: 100px; /* Space between the box and text */
+  width: 100%;
+  /* Full width of the container */
+  height: 230px;
+  /* Set height to 200px */
+  border: 3px dotted #DADADA;
+  /* Size of the dotted border */
+  background-color: transparent;
+  /* Transparent background */
+  color: #DADADA;
+  /* Text color */
+  padding: 20px;
+  /* Padding inside the text box */
+  font-size: 36px;
+  /* Font size */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  resize: none;
+  /* Prevent resizing */
+  border-radius: 15px;
+  /* Border radius for curvature */
+  margin-top: 100px;
+  /* Space between the box and text */
 }
 
 #comment-box::placeholder {
-  color: #DADADA; /* Placeholder text color */
-  font-size: 36px; /* Set placeholder font size to 24px */
+  color: #DADADA;
+  /* Placeholder text color */
+  font-size: 36px;
+  /* Set placeholder font size to 24px */
 }
 
 #submit-btn {
-  width: 225px;/* Set width to 151px */
-  height: 70px;/* Set height to 54px */
-  background-color: #A5A3A3; /* Standard blue background color */
-  color: #DADADA; /* Text color */
-  font-size: 35px; /* Font size */
-  border: none; /* Remove border */
-  border-radius: 20px; /* Border radius for curvature */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  width: 225px;
+  /* Set width to 151px */
+  height: 70px;
+  /* Set height to 54px */
+  background-color: #A5A3A3;
+  /* Standard blue background color */
+  color: #DADADA;
+  /* Text color */
+  font-size: 35px;
+  /* Font size */
+  border: none;
+  /* Remove border */
+  border-radius: 20px;
+  /* Border radius for curvature */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
   /* margin: calc(40% + 72px) auto 0;  */
   /* 72px below the text area, centered horizontally */
-  display: block; /* Make the button a block element to center it horizontally */
+  display: block;
+  /* Make the button a block element to center it horizontally */
   margin-top: 920px;
   margin-left: 410px;
 }

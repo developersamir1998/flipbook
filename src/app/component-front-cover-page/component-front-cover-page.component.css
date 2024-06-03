@@ -23,6 +23,10 @@
   background-image: url('../../assets/img/page1.png');
   background-size: 1098px 1529px;
   background-repeat: no-repeat;
+  /* added here */
+  border-radius: 30px;
+  border: 8px solid white;
+  overflow: hidden;
 }
 
 #logo-container {

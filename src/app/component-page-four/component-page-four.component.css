@@ -2,7 +2,8 @@
 
 .background-container {
     display:flex;
-    height: 1436.35px;
+    /* height: 1436.35px; */
+    height: 79vh;
     width: 1096px;
     border: none;
     padding: 0%;
@@ -11,6 +12,11 @@
     background-image: url("../../assets/images/Group_left.png"); 
     background-repeat: no-repeat;
     background-size: cover;
+     /* added here */
+     border-top-left-radius: 30px;
+     border-bottom-left-radius: 30px;
+  border: 2px solid white;
+  overflow: hidden;
 
   }
 /* 

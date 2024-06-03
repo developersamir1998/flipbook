@@ -2,11 +2,17 @@
   display: flex;
   /* justify-content: center;
   align-items: center; */
-  height: 100vh;
+  height: 79vh;
   background-color: black;
   background-image: url("../../assets/images/second_left.png");
   background-repeat: no-repeat;
   background-size: cover;
+   /* added here */
+   /* border-radius: 30px; */
+   border-top-left-radius: 30px;
+   border-bottom-left-radius: 30px;
+   border: 2px solid white;
+   overflow: hidden;
 }
 
 .heading{

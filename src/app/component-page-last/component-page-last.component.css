@@ -1,14 +1,19 @@
 .background-container {
   display: flex;
-  height: 1440px;
+  /* height: 1440px; */
+  height: 79vh;
   width: 1095px;
-  border: none;
+  /* border: none; */
   padding: 0;
   margin: 0;
   background-color: black;
   background-image: url("../../assets/images/Group_18994.png");
   background-repeat: no-repeat;
   background-size: cover;
+   /* added here */
+   border-radius: 30px;
+   border: 2px solid white;
+   overflow: hidden;
 }
 
 .thumbsup {

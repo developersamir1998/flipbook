@@ -6,13 +6,13 @@
   /* border: none; */
   padding: 0;
   margin: 0;
-  background-color: black;
+  /* background-color: black; */
   background-image: url("../../assets/images/Group_18994.png");
   background-repeat: no-repeat;
   background-size: cover;
    /* added here */
    border-radius: 30px;
-   border: 2px solid white;
+   border: 4px solid white;
    overflow: hidden;
 }
 

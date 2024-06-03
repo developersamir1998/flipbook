@@ -3,7 +3,7 @@
   /* justify-content: center;
   align-items: center; */
   height: 79vh;
-  background-color: black;
+  /* background-color: black; */
   background-image: url("../../assets/images/second_left.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,7 +11,9 @@
    /* border-radius: 30px; */
    border-top-left-radius: 30px;
    border-bottom-left-radius: 30px;
-   border: 2px solid white;
+   border-top: 4px solid white;
+   border-left: 4px solid white;
+   border-bottom: 4px solid white;
    overflow: hidden;
 }
 

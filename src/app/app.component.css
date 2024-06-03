@@ -2,12 +2,13 @@ body {
   /* background-color: #c9c5ef; */
   height: 100%;
   margin: 0;
-  background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
+  background:  url('../assets/img/background_image.jpg');
+  /* Adjusted background-size */
   overflow: hidden;
 }
 
 
-.container{
+.container {
   padding: 20px;
 }
 
@@ -15,29 +16,28 @@ body {
 .page .container {
   display: flex;
   width: 100%;
-  margin: 0 ;
+  margin: 0;
   padding: 5px 20px;
   /* margin-bottom: 5%; */
 }
-
-
-
 
 .wrapper {
   /* Layout Properties */
   top: -16px;
   left: -139px;
-  width: 100vw; /* Change to viewport width */
-  height: 100vh; /* Change to viewport height */
+  width: 100vw;
+  /* Change to viewport width */
+  height: 100vh;
+  /* Change to viewport height */
   /* UI Properties */
   /* background: transparent url('../assets/images/Mask Group 10549.png') 0% 0% / cover no-repeat padding-box; /* Adjusted background-size */
-  border-radius: 16px;
+  /* border-radius: 16px; */
   /* opacity: 0.81; */
   /* backdrop-filter: blur(43px); */
   /* -webkit-backdrop-filter: blur(43px); */
 }
 
-#logo{
+#logo {
   background-image: url("../assets/images/LivingLab_Logo.png");
   /* margin-top: 105px;
   margin-left: 465px; */
@@ -46,7 +46,8 @@ body {
   height: 80px;
   display: none;
 }
-#logo-container{
+
+#logo-container {
   margin-top: 76px;
   margin-left: 280px;
   background-size: 450px;
@@ -54,17 +55,18 @@ body {
   height: 80px;
 }
 
-#logo.visibleLogo{
+#logo.visibleLogo {
   background-size: 450px;
   width: 450px;
   height: 80px;
 }
-#logo.visibleLogo{
+
+#logo.visibleLogo {
   display: block;
 }
 
 
-#text-page1{
+#text-page1 {
   background-image: url("../assets/img/Visitor_book.png");
   position: absolute;
   /* margin-top: 105px;
@@ -74,7 +76,8 @@ body {
   height: 80px;
   display: none;
 }
-#text-container-page1{
+
+#text-container-page1 {
   margin-top: 76px;
   margin-left: 280px;
   background-size: 450px;
@@ -83,18 +86,19 @@ body {
   z-index: -1;
 }
 
-#text-page1.visibleTextPage1{
+#text-page1.visibleTextPage1 {
   background-size: 675px;
   width: 674px;
   height: 125px;
   margin-top: 655px
 }
-#text-page1.visibleTextPage1{
+
+#text-page1.visibleTextPage1 {
   display: block;
 }
 
 
-#text-page6{
+#text-page6 {
   background-image: url("../assets/img/Visitor_book.png");
   /* margin-top: 105px;
   margin-left: 465px; */
@@ -103,7 +107,8 @@ body {
   height: 80px;
   display: none;
 }
-#text-container-page6{
+
+#text-container-page6 {
   /* margin-top: 76px; */
   margin-left: 1800px;
   background-size: 450px;
@@ -112,7 +117,7 @@ body {
   z-index: -1;
 }
 
-#text-page6.visibleTextPage6{
+#text-page6.visibleTextPage6 {
   /* background-size: 450px; */
   position: absolute;
   background-size: 675px;
@@ -120,7 +125,8 @@ body {
   height: 125px;
   margin-top: 655px;
 }
-#text-page6.visibleTextPage6{
+
+#text-page6.visibleTextPage6 {
   display: block;
 }
 
@@ -144,7 +150,7 @@ body {
 .flipbook {
   /* position: fixed; */
   /* transition: margin-left 0.25s ease-out; */
- 
+
   position: absolute;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -157,17 +163,17 @@ body {
   width: 1800px;
   height: 1440px;
 
-   /* added here */
-   border-radius: 30px;
-  
-   
- 
- 
+  /* added here */
+  border-radius: 30px;
+
+
+
+
 }
 
 
 .flipbook .page {
-  background: #eee;
+  /* background: #eee; */
   position: absolute;
   top: 0;
   right: 0;
@@ -182,7 +188,7 @@ body {
 
 .flipbook .cover-back {
   background: #2c92e6;
-  box-shadow: inset -15px 0px 10px -4px rgb(0,0,0,0.7);
+  /* box-shadow: inset -15px 0px 10px -4px rgb(0, 0, 0, 0.7); */
 }
 
 
@@ -194,45 +200,38 @@ body {
 }
 
 
-.mid-right-page {
-  box-shadow: inset 10px 2px 10px -4px rgba(0, 0, 0, 0.5), inset -5px -5px 10px -4px rgba(0, 0, 0, 0.5);
-}
-
-
-.mid-left-page {
-  box-shadow: inset -10px 2px 10px -4px rgb(0, 0, 0, 0.5), inset 5px -5px 10px -4px rgba(0, 0, 0, 0.5);
- 
-}
-
 
 .flipbook .page img {
   max-width: 10%;
   max-height: 100%;
 }
 
-#flipbook.visible{
-  box-shadow: 11px 15px 16px 20px #888888;
+#flipbook.visible {
+  box-shadow: 11px 11px 20px 0px #888888;
 }
 
 /* Add animation for moving flipbook to the right */
-.flipbook.move-right {
-  margin-left: 270px; /* Adjust this value as needed */
-  transform: translate(50%); /* Move to the right */
-  transition: margin-left 1s ease, transform 1s ease; /* Add transition effect */
-}
+/* .flipbook.move-right {
+  margin-left: 270px; */
+  /* Adjust this value as needed */
+  /* transform: translate(50%); */
+  /* Move to the right */
+  /* transition: margin-left 1s ease, transform 1s ease; */
+  /* Add transition effect */
+/* } */
 
 
 
-  /* .flipbook.move-left {
+/* .flipbook.move-left {
   margin-right: 50%; Adjust this value as needed 
   transform: translate(50%);  Move to the right 
   transition: margin-left 1s ease, transform 1s ease; Add transition effect 
 }*/
 
-.flipbook-back {
- 
+/* .flipbook-back {
+
   transition: margin-left 0.25s ease-out;
- 
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -243,5 +242,5 @@ body {
   margin-top: 5%;
   width: 1800px;
   height: 1500px;
- 
-}
+
+} */

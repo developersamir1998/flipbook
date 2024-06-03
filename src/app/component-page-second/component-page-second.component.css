@@ -50,7 +50,7 @@
   /* Add your styles here */
   /* background-color: #09d3ea; example background color */
   padding: 20px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 5px;
   margin-top: 150px;
   margin-left: 100px
@@ -59,13 +59,13 @@
 /* Style for the demo-container div */
 .mainbody .demo-container {
   
-  width: 800px;
-  height: 300px;
-  margin-left: -3px;
-  margin-top: 20px; /* Adjust margin top for spacing between containers */
-  margin-bottom: 55px; /* Maintain margin-bottom from original styles */
-  padding: 20px;
-  border-bottom: 1px solid #ccc; /* Maintain border-bottom from original styles */
+    width: 1000px;
+    height: 300px;
+    /* margin-left: -3px; */
+    margin-top: 20px;
+    margin-bottom: 55px;
+    /* padding: 20px; */
+    /* border-bottom: 1px solid #ccc; */
 }
 
 /* Style for the demo-box div */
@@ -73,7 +73,7 @@
   flex-direction: column; /* Stack elements vertically */
   align-items: center;
   padding: 40px;
-  width: 800px;
+  /* width: 800px; */
   height: 300px;
   max-width: 100%; /* Adjust to make responsive */
   background-color: #E0ECFF;

@@ -67,7 +67,9 @@ export class FeedbackDataService {
     }
   }
   getSelectedVisitorName(): string {
+    
     return this.selectedVisitorName ||' ';
+
   }
 
   getOverallRating(): number {

@@ -43,7 +43,7 @@ export class ComponentFrontCoverPageComponent implements OnInit {
     this.feedbackDataService.getFilteredData().subscribe(data => {
       if (data) {
         // Assuming client_name is a property in the data
-        this.recievedClientName = data.client_name.toUpperCase();
+        this.recievedClientName = data.client_name;
         this.visitorDetails=data.visitors_details;
         this.feedbackDataService.setClientName(data.client_name);
       } else {

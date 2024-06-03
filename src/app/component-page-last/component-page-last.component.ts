@@ -23,7 +23,7 @@ export class ComponentPageLastComponent implements OnInit, OnDestroy {
 
       if (data) {
         // Assuming client_name is a property in the data
-        this.recievedClientName = data.client_name.toUpperCase();
+        this.recievedClientName = data.client_name;
       } else {
         // Handle the case where filtered data is empty or undefined
         this.recievedClientName = "Loading Client Details..";
@@ -36,10 +36,10 @@ export class ComponentPageLastComponent implements OnInit, OnDestroy {
       console.log("recieved selected visitor name on last page=",visitorName);
       if (visitorName) {
         this.selectedVisitorName = visitorName;
-        this.selectedVisitorName = this.selectedVisitorName.toUpperCase();
+        // this.selectedVisitorName = this.selectedVisitorName;
         
       }
-    }, 500);
+    }, 1000);
   }
 
   ngOnDestroy(): void {

@@ -25,7 +25,7 @@ export class ComponentPageSecondComponent implements OnInit,OnDestroy {
   ) {
 
     this.feedbackDataService.getClickEvent().subscribe(() => {
-      //this.demoFeedback=[];
+     // this.demoFeedback=[];
       this.resetForm();
     });
   }

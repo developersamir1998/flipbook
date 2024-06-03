@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { FeedbackDataService } from '../services/feedback-data.service';
 import * as $ from 'jquery'; // Import the jQuery library
 //libraries for turning the page effect
@@ -22,16 +22,18 @@ export class ComponentPageFiveComponent implements OnInit {
   overallRating: number = 0;
   comment: string = '';
   visitorDetails: any[] = [];
+
+  
   
 
 
-  constructor(private feedbackDataService: FeedbackDataService) { }
+  constructor(private feedbackDataService: FeedbackDataService, private renderer: Renderer2) { }
 
   resetForm2():void{
     this.overallRating = 0;
     this.comment = '';
     this.visitorDetails = [];
-    
+    this.resetEmojiSelection();
    
 
   }
@@ -60,7 +62,6 @@ export class ComponentPageFiveComponent implements OnInit {
   this.feedbackDataService.setVisitComment(this.comment);
 }
 
-// 
 submitFeedbackForm(): void {
   console.log("entering the storefeedback:")
   const feedbackData = {
@@ -98,6 +99,7 @@ submitFeedbackForm(): void {
 
       this.feedbackSubmitted = true;  
       this.openLastPage(); // Call function to open the last page
+      
     },
     error => {
       console.error('Error storing feedback:', error);
@@ -112,10 +114,7 @@ openLastPage(): void {
   setTimeout(() => {
     console.log("After 5 second page 1 will me open.");
     ($("#flipbook") as any).turn("page", 1);
-  }, 5000);
-
-  
-  
+  }, 5000); 
 }
 
 onPopuphomeClicked(): void {
@@ -130,10 +129,18 @@ onPopupfirstClicked():void{
   window.location.href = redirectURL;
 }
 
-
-
 feedbacksubmit(){
   this.submitFeedbackForm();
- 
 } 
+resetEmojiSelection(): void {
+  const emojis = [1, 2, 3, 4, 5];
+  emojis.forEach(emoji => {
+    const radioButton = this.renderer.selectRootElement(`#emoji${emoji}`, true);
+    this.renderer.setProperty(radioButton, 'checked', false);
+  });
 }
+
+
+}
+
+

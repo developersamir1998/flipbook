@@ -5,7 +5,7 @@
   </div>
 
   <div id="name-date-container">
-      <span id="name">{{recievedClientName}}</span>
+      <span id="name">{{recievedClientName | uppercase}}</span>
       <span id="date">{{ currentDate }}</span>
   </div>
 
@@ -13,7 +13,7 @@
       <h2 id="select-visitor-heading">Select Visitor</h2>
       <div id="visitor-list">
         <ng-container *ngFor="let visitor of visitorDetails; let i = index">
-          <button class="visitor-button">
+          <button class="visitor-button" (click)="handleVisitorSelection(visitor.visitor_name)">
               <span class="visitor-name">{{ visitor.visitor_name }}</span>
               <span class="visitor-designation">{{ visitor.visitor_designation }}</span>
           </button>

@@ -22,7 +22,7 @@
 /* Style for the subhead1 div */
 .heading .subhead1 {
   /* Add your styles here */
-  margin-top: 50px;
+  margin-top: 105px;
   margin-bottom: 10px;
 }
 
@@ -41,6 +41,7 @@
   font-size: 40px;
   color: #FFFFFF; /* example text color */
   font-family: Nunito Sans, Regular;
+  margin: 35px 0px;
 }
 
 
@@ -52,7 +53,7 @@
   padding: 20px;
   /* border: 1px solid #ddd; */
   border-radius: 5px;
-  margin-top: 150px;
+  margin-top: 260px;
   margin-left: 100px
 }
 
@@ -76,7 +77,7 @@
   /* width: 800px; */
   height: 300px;
   max-width: 100%; /* Adjust to make responsive */
-  background-color: #E0ECFF;
+  background-color: #494949;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add box shadow for depth */
@@ -86,7 +87,7 @@
 .mainbody .demo-container .demo-box label {
   font-family: Nunito Sans, Bold;
   font-size: 60px;
-  color:#0D2D55;
+  color:#ffffff;
   margin-bottom: 25px; /* Adjust margin bottom for spacing */
 }
 
@@ -123,8 +124,9 @@
 .info-symbol {
   position: relative;
   cursor: pointer;
-  margin-left: 5px; /* Add some spacing between the label and the symbol */
+  margin-left: 30px; /* Add some spacing between the label and the symbol */
   font-size: 3.5em;
+  color: #FFFFFF;
 }
 
 .info-symbol:hover::after {

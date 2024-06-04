@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Include Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -9,62 +9,53 @@
 
 <body>
   <div class="wrapper">
+    <!-- infosys Logo -->
     <div id="logo-container">
-      <div id="logo" >
+      <div id="logo">
       </div>
     </div>
-
+    <!-- Left side text at first page -->
     <div id="text-container-page1">
-      <div id="text-page1" >
+      <div id="text-page1">
       </div>
     </div>
-
+    <!-- right side text at last page -->
     <div id="text-container-page6">
-      <div id="text-page6" >
+      <div id="text-page6">
       </div>
     </div>
-
+    <!-- Main Flipbook -->
     <div class="aspect">
       <div class="aspect-inner">
         <div class="flipbook" id="flipbook">
-
           <!-- Page 1 - Cover Front -->
-          <div class="page cover-front">
+          <div>
             <app-component-front-cover-page></app-component-front-cover-page>
           </div>
-
           <!-- Page 2-->
-          <div class="page mid-left-page">
+          <div>
             <app-component-page-second></app-component-page-second>
           </div>
-
-
           <!-- Page 3 -->
-          <div class="page mid-right-page">
+          <div>
             <app-component-page-third></app-component-page-third>
           </div>
-
           <!-- Page 4 -->
-          <div class="page mid-left-page">
-             <app-component-page-four></app-component-page-four>
+          <div>
+            <app-component-page-four></app-component-page-four>
           </div>
-
-
           <!-- Page 5 -->
-          <div class="page mid-right-page">
+          <div>
             <app-component-page-five></app-component-page-five>
           </div>
-
           <!-- Page 6 - Cover back page -->
-          <div class="page cover-back mid-left-page">
+          <div>
             <app-component-page-last></app-component-page-last>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 </body>
-
 
 </html>

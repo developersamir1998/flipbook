@@ -1,5 +1,4 @@
 // This component sets up a flipbook, handles audio, 
-//and allows switching between images and videos. 
 //It also handles file input and stores data in local storage. 
 
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core'; // Import necessary Angular components and modules
@@ -26,7 +25,6 @@ export class AppComponent implements OnInit {
   private audio_close: HTMLAudioElement; // Define an HTML audio element for book closing sounds
   isVideoOpen = false; // Initialize a flag for video open state
 
-
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
@@ -41,7 +39,6 @@ export class AppComponent implements OnInit {
     this.audio_close = new Audio('assets/audio/Pageturn.mp3'); // Initialize book closing sound audio
     // this.audio_close.load();
   }
-
 
   playAudio_flip() {
     this.audio_flip.play(); // Function to play flip sound
@@ -63,10 +60,6 @@ export class AppComponent implements OnInit {
 
     this.flipbookEL = this.el.nativeElement.querySelector('#flipbook'); // Get the flipbook element
     this.setupFlipbook(); // Call a function to set up the flipbook
-    this.imageUrl = localStorage.getItem('imageData'); // Get image URL from local/static storage
-    this.textContent = localStorage.getItem('textConte​nt'); // Get text content from local/static storage
-
-
   }
 
   // Utility function to format date as DD-MM-YYYY
@@ -82,14 +75,11 @@ export class AppComponent implements OnInit {
     fetch('http://localhost:5000/api/visit/visitList')
       .then(response => response.json())
       .then(data => {
-
         console.log("fetched data through api  in App.ts=", data);
-
         const filteredVisitByDate = data.filter((item: { visit_date: string; }) => this.formatDate(item.visit_date) === this.currentDate);
         const filteredData = filteredVisitByDate.find((item: { client_name: string; }) => item.client_name === clientName);
         console.log("filtered data in App.ts=", filteredData);
         this.feedbackDataService.setFilteredData(filteredData);
-
       })
       .catch(error => {
         console.error('Error Fetching Data:', error);
@@ -97,7 +87,6 @@ export class AppComponent implements OnInit {
   }
 
   private setupFlipbook(): void {
-
     if (this.flipbookEL) {
       ($(this.flipbookEL) as any).turn({
         width: 2200,
@@ -107,9 +96,11 @@ export class AppComponent implements OnInit {
         when: {
           turning: (event: any, page: number, view: any) => {
             console.log("corner clicked!=", page);
+
             //display logo
             ($("#logo") as any).addClass("visibleLogo");
 
+            // Text on sides
             if (page == 1) {
               //add text at page 1
               ($("#text-page1") as any).addClass("visibleTextPage1");
@@ -127,11 +118,10 @@ export class AppComponent implements OnInit {
               ($("#text-page6") as any).removeClass("visibleTextPage6");
             }
 
-
+            // Shadows on page
             if (page > 1 && page < 6) {
               //add shadow
               ($(this.flipbookEL) as any).addClass("visible");
-              
             }
             else {
               //remove shadow
@@ -140,79 +130,17 @@ export class AppComponent implements OnInit {
               //($("#logo") as any).removeClass("visibleLogo");
             }
 
-            if (page >= 3 && page <= 12) {
-
-              this.playAudio_flip(); // Play flip sound when turning pages 3 to 12 
-              //the sound of turning the pages, inside the book
+            // Play page flip Audio
+            if (page >= 3 && page <= 4) {
+              this.playAudio_flip(); // Play flip sound when turning pages 3 to 4
             }
-            if (page == 1 || page == 2 || page == 13 || page == 14) {
+            if (page == 1 || page == 2 || page == 5 || page == 6) {
               this.playAudio_close(); // Play book closing sound on pages 1, 2, 13, and 14
               //sound of opening and closing the book allocated to the pages from the begining and the end of the book
             }
           },
-          turned: (event: any, page: number, view: any) => {
-            if (page > 1) {
-              // this.moveFlipbookToRight(); 
-              // Move flipbook to the right after turning a page
-              console.log(page)
-            }
-            //add else if to if page is equlas to 5 it should remove moverihgth
-            if (page > 5) {
-              // this.moveFlipbookToLeft();
-            }
-          },
-
-
         }
       });
-
-      window.addEventListener('resize', () => {
-        ($(this.flipbookEL) as any).turn('size', this.flipbookEL.clientWidth, this.flipbookEL.clientHeight);
-      });
     }
   }
-
-  private moveFlipbookToRight(): void {
-    this.renderer.addClass(this.flipbookEL, 'move-right'); // Add CSS class to move flipbook to the right
-  }
-  private moveFlipbookToLeft(): void {
-    this.renderer.addClass(this.flipbookEL, 'flipbook-back'); // Add CSS class to move flipbook to the left
-    this.renderer.removeClass(this.flipbookEL, 'move-right');
-  }
-
-
-
-  //end of that
-
-  selectedFile: File | null = null; // Initialize a selected file variable
-  imageUrl: string | null = null; // Initialize a URL for the selected image
-  textContent: string | null = null; // Initialize text content variable
-
-  // Function for storing in LocalStorage on the Angular side
-  handleFileInput(event: any): void {
-    this.selectedFile = event.target.files[0]; // Get the selected file from the input event
-    if (this.selectedFile) {
-      if (this.selectedFile.type.startsWith('image/')) {
-        // It's an image, you can display or process the image here.
-        // this.selectedFile is of type File.
-        const reader = new FileReader(); // Create a FileReader to read the image
-        reader.onload = (e) => {
-          this.imageUrl = e.target?.result as string; // Get the image URL
-          localStorage.setItem('imageData', this.imageUrl); // Store the image data in local storage
-        };
-        reader.readAsDataURL(this.selectedFile); // Read the selected image as data URL
-      } else if (this.selectedFile.type.startsWith('text')) {
-        // It's a text file, you can read the content here.
-        const reader = new FileReader(); // Create a FileReader to read the text file
-        reader.onload = (e) => {
-          this.textContent = e.target?.result as string; // Get the text content
-          console.log(this.textContent); // Log the text content to the console
-          localStorage.setItem('textContent', this.textContent); // Store the text content in local storage
-        };
-        reader.readAsText(this.selectedFile); // Read the selected text file as text
-      }
-    }
-  }
-
-
 }

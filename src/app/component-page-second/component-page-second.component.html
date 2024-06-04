@@ -1,41 +1,27 @@
 <div class="secondmain">
-    <div class="heading" *ngIf="selectedFeedback">
-     <div class="subhead1">
+  <!-- Heading -->
+  <div class="heading" *ngIf="selectedFeedback">
+    <div class="subhead1">
       <h3> Hi {{ selectedFeedback.client_name }} ,</h3>
-     </div>
-     <div class="subhead2">
-      <p>How would you rate today's demos?</p>
-     </div>
     </div>
-
-    <div *ngIf="selectedFeedback" class="mainbody">
-     
-      <form #feedbackForm="ngForm">
-        <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
-          <div class="demo-box">
-            <label>{{ demo.demo_name }}   </label>
-            <span class="info-symbol" [title]="demo.demo_description">🛈</span>
-            
-            
-            <!-- <div *ngFor="let question of demo.demo_questions; let questionIndex = index">
-              <h4>{{ question.questionText }}</h4> -->
-              <!-- <label>
-                <span *ngFor="let star of stars" (click)="setQuestionRating(demoIndex, questionIndex, question.questionText, star)"
-                      [style.color]="star <= (getQuestionRating(demoIndex, questionIndex) || 0) ? 'gold' : 'gray'">★</span>
-              </label> -->
-            <!-- </div> -->
-            <!-- <h2>How do you rate this showcase?</h2> -->
-            <div class="rating-stars">
-              <span *ngFor="let star of stars" 
-                (click)="setDemoRating(star, demoIndex)"
-                    [style.color]="star <= (demoFeedback[demoIndex]?.demo_rating || 0) ? 'gold' : 'gray'"
-                   >★</span>
-
-            </div>
-          </div>
-        </div>
-        
-      </form>
+    <div class="subhead2">
+      <p>How would you rate today's demos?</p>
     </div>
   </div>
   
+  <!-- Demo List with details and rating -->
+  <div *ngIf="selectedFeedback" class="mainbody">
+    <form #feedbackForm="ngForm">
+      <div *ngFor="let demo of selectedFeedback?.demo_details; let demoIndex = index" class="demo-container">
+        <div class="demo-box">
+          <label>{{ demo.demo_name }} </label>
+          <span class="info-symbol" [title]="demo.demo_description">🛈</span>
+          <div class="rating-stars">
+            <span *ngFor="let star of stars" (click)="setDemoRating(star, demoIndex)"
+              [style.color]="star <= (demoFeedback[demoIndex]?.demo_rating || 0) ? 'gold' : 'gray'">★</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

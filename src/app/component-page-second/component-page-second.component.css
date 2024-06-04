@@ -1,138 +1,107 @@
 .secondmain {
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
   height: 79vh;
-  /* background-color: black; */
   background-image: url("../../assets/images/second_left.png");
   background-repeat: no-repeat;
   background-size: cover;
-   /* added here */
-   /* border-radius: 30px; */
-   border-top-left-radius: 30px;
-   border-bottom-left-radius: 30px;
-   border-top: 4px solid #ffffff61;
-   border-left: 4px solid #ffffff61;
-   border-bottom: 4px solid #ffffff61;
-   overflow: hidden;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top: 4px solid #ffffff61;
+  border-left: 4px solid #ffffff61;
+  border-bottom: 4px solid #ffffff61;
+  overflow: hidden;
 }
 
-.heading{
+.heading {
   position: absolute;
- /* background-color: #f0f0f0;  example background color */
   padding: 20px;
   border-radius: 5px;
   height: 170px;
-   width: 893px;
-   margin-left: 100px;
+  width: 893px;
+  margin-left: 100px;
 }
 
-/* Style for the subhead1 div */
 .heading .subhead1 {
-  /* Add your styles here */
   margin-top: 105px;
   margin-bottom: 10px;
 }
 
-/* Style for the h3 element inside subhead1 */
 .heading .subhead1 h3 {
-  /* font-family: Nunito Sans, Bold; */
-  font: normal normal bold 28px/28px ;
-  color: #D8FDFF; /* Ensure the color stays yellow as in the inline style */
+  font: normal normal bold 28px/28px;
+  color: #D8FDFF;
   font-weight: bold;
   font-size: 50px;
 }
 
-/* Style for the subhead2 div */
 .heading .subhead2 {
-  /* Add your styles here */
   font-size: 40px;
-  color: #FFFFFF; /* example text color */
+  color: #FFFFFF;
   font-family: Nunito Sans, Regular;
   margin: 35px 0px;
 }
 
-
-
-
 .mainbody {
-  /* Add your styles here */
-  /* background-color: #09d3ea; example background color */
   padding: 20px;
-  /* border: 1px solid #ddd; */
   border-radius: 5px;
   margin-top: 260px;
   margin-left: 100px
 }
 
-/* Style for the demo-container div */
 .mainbody .demo-container {
-  
-    width: 1000px;
-    height: 300px;
-    /* margin-left: -3px; */
-    margin-top: 20px;
-    margin-bottom: 55px;
-    /* padding: 20px; */
-    /* border-bottom: 1px solid #ccc; */
+  width: 1000px;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 55px;
 }
 
-/* Style for the demo-box div */
 .mainbody .demo-container .demo-box {
-  flex-direction: column; /* Stack elements vertically */
+  flex-direction: column;
   align-items: center;
   padding: 40px;
-  /* width: 800px; */
   height: 300px;
-  max-width: 100%; /* Adjust to make responsive */
+  max-width: 100%;
   background-color: #494949;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add box shadow for depth */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the label elements inside demo-box */
 .mainbody .demo-container .demo-box label {
   font-family: Nunito Sans, Bold;
   font-size: 60px;
-  color:#ffffff;
-  margin-bottom: 25px; /* Adjust margin bottom for spacing */
+  color: #ffffff;
+  margin-bottom: 25px;
 }
 
-/* Style for the h4 elements inside demo-box */
 .mainbody .demo-container .demo-box h4 {
-  margin-top: 10px; /* Maintain margin-top from original styles */
+  margin-top: 10px;
   font-family: Nunito Sans, Regular;
   font-size: 40px;
   color: #0E1014;
-  margin-bottom: 20px; /* Adjust margin bottom for spacing */
+  margin-bottom: 20px;
 }
 
-/* Style for the rating-stars div */
 .mainbody .demo-container .demo-box .rating-stars {
   display: flex;
   align-items: center;
-  margin-top: 10px; /* Maintain margin-top from original styles */
+  margin-top: 10px;
 }
 
-/* Style for the star spans inside rating-stars */
 .mainbody .demo-container .demo-box .rating-stars span {
   cursor: pointer;
   font-size: 60px;
-  color: white; /* Default star color */
-  margin-right: 30px; /* Add right margin to create space between stars */
+  color: white;
+  margin-right: 30px;
 }
 
-/* Style for the active star spans (gold color) */
 .mainbody .demo-container .demo-box .rating-stars span.gold {
-  color: #FF8800; /* Active star color */
+  color: #FF8800;
 }
-
 
 .info-symbol {
   position: relative;
   cursor: pointer;
-  margin-left: 30px; /* Add some spacing between the label and the symbol */
+  margin-left: 30px;
   font-size: 3.5em;
   color: #FFFFFF;
 }
@@ -155,5 +124,3 @@
   font: normal normal normal Nunito Sans;
   text-align: left;
 }
-
-

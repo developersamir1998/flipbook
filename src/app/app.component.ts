@@ -107,6 +107,8 @@ export class AppComponent implements OnInit {
         when: {
           turning: (event: any, page: number, view: any) => {
             console.log("corner clicked!=", page);
+            //display logo
+            ($("#logo") as any).addClass("visibleLogo");
 
             if (page == 1) {
               //add text at page 1
@@ -129,14 +131,13 @@ export class AppComponent implements OnInit {
             if (page > 1 && page < 6) {
               //add shadow
               ($(this.flipbookEL) as any).addClass("visible");
-              //display logo
-              ($("#logo") as any).addClass("visibleLogo");
+              
             }
             else {
               //remove shadow
               ($(this.flipbookEL) as any).removeClass("visible");
               //display logo
-              ($("#logo") as any).removeClass("visibleLogo");
+              //($("#logo") as any).removeClass("visibleLogo");
             }
 
             if (page >= 3 && page <= 12) {

@@ -51,12 +51,9 @@ export class ComponentFrontCoverPageComponent implements OnInit {
         this.recievedClientName = "Loading Client Details..";
         console.error('Data recieved from service file is empty');
       }
-      
     });
-
   }
 
- 
   getCurrentDate(): string {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const today = new Date();
@@ -66,7 +63,6 @@ export class ComponentFrontCoverPageComponent implements OnInit {
     return `${day}-${month}-${year}`;
   }
   
-
   handleVisitorSelection(visitorName: string): void {
     if (this.selectedVisitor === visitorName) {
       // Deselect visitor if already selected
@@ -90,8 +86,4 @@ export class ComponentFrontCoverPageComponent implements OnInit {
     // Check if the visitor is currently selected
     return this.selectedVisitor === visitorName;
   }
-
-  
-  
-  
 }

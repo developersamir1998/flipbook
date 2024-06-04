@@ -1,7 +1,6 @@
-.page, .hard {
+.hard {
   width: 1100px;
   height: 1440px;
-  /* background-color: white; */
   border: 1px solid #ccc;
   position: absolute;
   backface-visibility: hidden;
@@ -9,10 +8,6 @@
   justify-content: center;
   align-items: center;
   font-size: 24px;
-}
-
-.hard {
-  /* background: #333; */
   color: white;
   font-weight: bold;
   transform-origin: left top;
@@ -23,7 +18,6 @@
   background-image: url('../../assets/img/page1.png');
   background-size: 1098px 1529px;
   background-repeat: no-repeat;
-  /* added here */
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   border: 4px solid #ffffff61;
@@ -82,7 +76,7 @@
 
 #visitor-selection-container {
   position: absolute;
-  top: 600px; /* Adjusted to position below the updated name-date-container */
+  top: 600px;
   left: 50%;
   transform: translateX(-50%);
   width: 550px;

@@ -1,31 +1,14 @@
 .background-container {
   display: flex;
-  /* height: 1436.35px; */
   height: 79vh;
   width: 1100px;
-  border: none;
-  padding: 0%;
-  margin: 0%;
-  /* background-color: black; */
   background-image: url("../../assets/images/Group_left.png");
   background-repeat: no-repeat;
   background-size: cover;
-  /* added here */
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   border-top: 4px solid #ffffff61;
   border-left: 4px solid #ffffff61;
   border-bottom: 4px solid #ffffff61;
   overflow: hidden;
-
 }
-
-/* 
-  .background-Image{
-    background-image: url("../../assets/images/Group 18997.png");
-    background-size: cover;
-    height: 104%;
-    width: 100%;
-  }
-  
-   */

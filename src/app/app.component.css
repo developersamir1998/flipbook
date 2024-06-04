@@ -45,6 +45,8 @@ body {
   width: 450px;
   height: 80px;
   display: none;
+  background-size: cover; /* Cover the entire element */
+  background-repeat: no-repeat; /* Prevent background image repetition */
 }
 
 #logo-container {
@@ -186,10 +188,10 @@ body {
 }
 
 
-.flipbook .cover-back {
-  background: #2c92e6;
+/* .flipbook .cover-back {
+  background: #2c92e6; */
   /* box-shadow: inset -15px 0px 10px -4px rgb(0, 0, 0, 0.7); */
-}
+/* } */
 
 
 .flipbook h2 {

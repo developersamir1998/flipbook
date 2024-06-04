@@ -4,7 +4,6 @@
   background-repeat: no-repeat;
   display: flex;
   height: 79vh;
-  /* added here */
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   border-top: 4px solid #ffffff61;
@@ -40,27 +39,18 @@
 
 #emojis input[type="radio"] {
   display: none;
-  /* Hide the default radio button */
 }
 
 #emojis label {
   width: 110px;
-  /* Set the width of the label */
   height: 110px;
-  /* Set the height of the label */
   cursor: pointer;
-  /* Change the cursor to pointer */
   display: flex;
-  /* Use flexbox to align the image inside */
   justify-content: center;
-  /* Center the image horizontally */
   align-items: center;
-  /* Center the image vertically */
   background-size: cover;
-  /* Cover the label with the image */
 }
 
-/* Initial background images */
 #emoji1+label {
   background-image: url('../../assets/emojis/e1.png');
 }
@@ -81,7 +71,6 @@
   background-image: url('../../assets/emojis/e5.png');
 }
 
-/* Background images for checked state */
 #emoji1:checked+label {
   background-image: url('../../assets/emojis/e11.png');
 }
@@ -105,68 +94,40 @@
 #comment-box-container {
   position: absolute;
   top: 550px;
-  /* Adjusted the distance to 200 pixels below the emojis */
   left: 50%;
-  /* Center horizontally */
   transform: translateX(-50%);
-  /* Center horizontally */
   width: 810px;
-  /* Same width as the paragraph tag */
 }
 
 #comment-box {
   width: 100%;
-  /* Full width of the container */
   height: 230px;
-  /* Set height to 200px */
   border: 3px dotted #DADADA;
-  /* Size of the dotted border */
   background-color: transparent;
-  /* Transparent background */
   color: #DADADA;
-  /* Text color */
   padding: 20px;
-  /* Padding inside the text box */
   font-size: 36px;
-  /* Font size */
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
   resize: none;
-  /* Prevent resizing */
   border-radius: 15px;
-  /* Border radius for curvature */
   margin-top: 100px;
-  /* Space between the box and text */
 }
 
 #comment-box::placeholder {
   color: #DADADA;
-  /* Placeholder text color */
   font-size: 36px;
-  /* Set placeholder font size to 24px */
 }
 
 #submit-btn {
   width: 225px;
-  /* Set width to 151px */
   height: 70px;
-  /* Set height to 54px */
   background-color: #A5A3A3;
-  /* Standard blue background color */
   color: #DADADA;
-  /* Text color */
   font-size: 35px;
-  /* Font size */
   border: none;
-  /* Remove border */
   border-radius: 20px;
-  /* Border radius for curvature */
   cursor: pointer;
-  /* Change cursor to pointer on hover */
-  /* margin: calc(40% + 72px) auto 0;  */
-  /* 72px below the text area, centered horizontally */
   display: block;
-  /* Make the button a block element to center it horizontally */
   margin-top: 920px;
   margin-left: 410px;
 }

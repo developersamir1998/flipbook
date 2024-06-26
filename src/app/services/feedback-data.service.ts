@@ -116,7 +116,7 @@ export class FeedbackDataService {
    //store feedback data from second page 
    storeFeedback(feedbackData: any): Observable<any> {
     console.log("in service stored "+feedbackData);
-    const url = 'http://localhost:5000/api/feedback/createFeedback';
+    const url = 'https://backend-new-cshx.onrender.com/api/feedback/createFeedback';
     return this.http.post<any>(url, feedbackData);
   }
 

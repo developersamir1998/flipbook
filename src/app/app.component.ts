@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
       .then(response => response.json())
       .then(data => {
         console.log("fetched data through api  in App.ts=", data);
-        const filteredVisitByDate = data.filter((item: { visit_date: string; }) => this.formatDate(item.visit_date) === this.currentDate);
+        const filteredVisitByDate = data.filter((item: { visit_date: string; }) => (item.visit_date) == visitDate);
         const filteredData = filteredVisitByDate.find((item: { client_name: string; }) => item.client_name === clientName);
         console.log("filtered data in App.ts=", filteredData);
         this.feedbackDataService.setFilteredData(filteredData);
